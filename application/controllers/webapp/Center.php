@@ -27,6 +27,10 @@ class Center extends CI_Controller
     public function dispatcher($slug)
     {
         switch ($slug) {
+            case "login":
+                $data['active_page'] = 'login';
+                $this->load->view('admin/login', $data);
+                break;
             case "issiloo":
                 $data['active_page'] = 'issiloo';
                 $data['slug'] = $slug;

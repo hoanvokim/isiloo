@@ -62,3 +62,6 @@ $route['news/(:any)'] = 'webapp/news/all/$1';
 $route['news/news_content/(:any)'] = 'webapp/news/content/$1';
 $route['programs/(:any)'] = 'webapp/program/all/$1';
 $route['album/(:any)'] = 'webapp/program/album/$1';
+
+//admin
+$route['login'] = 'webapp/center/dispatcher/login';
