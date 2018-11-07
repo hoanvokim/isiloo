@@ -865,7 +865,7 @@ p {
     background: -o-linear-gradient(left, #2e4a93, #688dcf);
     background: linear-gradient(to right, #2e4a93, #688dcf);
     padding: 50px 0 50px 0;
-    height: 530px;
+    height: 500px;
 }
 
 .scholar_ship_area-heading {
@@ -2645,6 +2645,7 @@ div.show-shadow:hover img {
     color: #2e4a93;
     font-weight: bold;
     padding-left: 10px;
+    text-align: left !important;
 }
 
 .chuongtrinhissiloo_slides span {
@@ -2999,4 +3000,8 @@ div.show-shadow:hover img {
     font-size: 20px;
     color: slategray !important;
     font-family: 'Cabin', sans-serif;
+}
+
+.blue-text {
+    color: #2e4a93 !important;
 }

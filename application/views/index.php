@@ -20,10 +20,10 @@
                     <div class="get-start-area">
                         <!-- Form Start -->
                         <?php echo form_open_multipart('dialForm'); ?>
-                            <input type="text" name="dialPhone" class="form-control phone wow flipInY" data-wow-delay="1s"
-                                   placeholder="Số điện thoại">
-                            <input type="submit" class="submit wow flipInY" data-wow-delay="1.2s"
-                                   value="Tư vấn">
+                        <input type="text" name="dialPhone" class="form-control phone wow flipInY" data-wow-delay="1s"
+                               placeholder="Số điện thoại">
+                        <input type="submit" class="submit wow flipInY" data-wow-delay="1.2s"
+                               value="Tư vấn">
                         </form>
                         <!-- Form End -->
                     </div>
@@ -159,10 +159,10 @@
 
     <!-- ***** chuong trinh Area Start ***** -->
     <section class="our-Team-area bg-white section_padding_50_0 clearfix mt-80" id="chuongtrinh">
-<!--        <div>-->
-<!--            <img class="injectRightDiv-chuongtrinh"-->
-<!--                 src="--><?php //echo base_url(); ?><!--webresources/img/issi/hoa-issiloo.png">-->
-<!--        </div>-->
+        <!--        <div>-->
+        <!--            <img class="injectRightDiv-chuongtrinh"-->
+        <!--                 src="--><?php //echo base_url(); ?><!--webresources/img/issi/hoa-issiloo.png">-->
+        <!--        </div>-->
         <div class="container">
             <div class="row">
                 <div class="col-12 text-center">
@@ -234,9 +234,9 @@
 
     <!-- ***** Hoc Bong Area Start ***** -->
     <section class="scholar_ship_area clearfix section_padding_100_50" id="hocbong">
-<!--        <div>-->
-<!--            <img class="injectLeftDiv" src="--><?php //echo base_url(); ?><!--webresources/img/issi/hoa-issiloo.png">-->
-<!--        </div>-->
+        <!--        <div>-->
+        <!--            <img class="injectLeftDiv" src="--><?php //echo base_url(); ?><!--webresources/img/issi/hoa-issiloo.png">-->
+        <!--        </div>-->
         <div class="container">
             <div class="row">
                 <div class="col-md-6 col-5 text-center">
@@ -244,7 +244,7 @@
                     <div class="scholar_ship_area-heading with-text-padding">
                         <h1 class="wow bounceInLeft" data-wow-delay="0.4s">Học bổng</h1>
                         <span class="wow bounceInLeft" data-wow-delay="0.6s">
-                            Tổng hợp và cập nhật những thông tin học bổng trong và ngoài nước dành cho các bạn du học sinh
+                            Tổng hợp và cập nhật những thông tin học bổng <br/> trong và ngoài nước dành cho các bạn du học sinh
                         </span>
                         <br/>
                         <a class="button-view wow flipInY" data-wow-delay="1s" href="<?php echo base_url() . 'news/hoc-bong'; ?>">
@@ -308,6 +308,11 @@
                     <!-- Heading Text  -->
                     <div class="study_abroad_area-heading with-text-padding">
                         <h1 class="wow bounceInLeft" data-wow-delay="0.4s">Thông tin du học</h1>
+                        <span class="wow bounceInLeft blue-text" data-wow-delay="0.6s">
+                            Tổng hợp, cập nhật tất cả những thông tin liên quan đến chương trình <br/>
+                            du học Hàn Quốc và kinh nghiệm du học Hàn Quốc
+                        </span>
+                        <br/>
                         <a class="button-view wow flipInY" data-wow-delay="1s" href="<?php echo base_url() . 'news/thong-tin-du-hoc'; ?>">
                             Xem thêm →
                         </a>
