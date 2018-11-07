@@ -38,11 +38,11 @@ class User_model extends MY_Model
         $this->db->update($this->table_name, $data);
     }
 
-    public function authenticate($username, $password)
+    public function login($username, $password)
     {
         $this->db->from($this->table_name);
         $this->db->where('username', $username);
-        $this->db->where('password', MD5($password));
+        $this->db->where('password', $password);
         $this->db->limit(1);
         $query = $this->db->get();
         if ($query->num_rows() == 1) {
@@ -50,4 +50,11 @@ class User_model extends MY_Model
         }
         return false;
     }
+
+    public function findByUsername($username) {
+        $this->db->from($this->table_name);
+        $this->db->where('username', $username);
+        return $this->db->get()->row();
+    }
+
 }

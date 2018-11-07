@@ -17,14 +17,14 @@
     <link rel="apple-touch-icon" href="apple-icon.png">
     <link rel="shortcut icon" href="favicon.ico">
 
-    <link rel="stylesheet" href="<?php echo base_url(); ?>webresources_admin/css/normalize.css">
-    <link rel="stylesheet" href="<?php echo base_url(); ?>webresources_admin/css/bootstrap.min.css">
-    <link rel="stylesheet" href="<?php echo base_url(); ?>webresources_admin/css/font-awesome.min.css">
-    <link rel="stylesheet" href="<?php echo base_url(); ?>webresources_admin/css/themify-icons.css">
-    <link rel="stylesheet" href="<?php echo base_url(); ?>webresources_admin/css/flag-icon.min.css">
-    <link rel="stylesheet" href="<?php echo base_url(); ?>webresources_admin/css/cs-skin-elastic.css">
+    <link rel="stylesheet" href="<?php echo base_url(); ?>webresources_admin/assets/css/normalize.css">
+    <link rel="stylesheet" href="<?php echo base_url(); ?>webresources_admin/assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="<?php echo base_url(); ?>webresources_admin/assets/css/font-awesome.min.css">
+    <link rel="stylesheet" href="<?php echo base_url(); ?>webresources_admin/assets/css/themify-icons.css">
+    <link rel="stylesheet" href="<?php echo base_url(); ?>webresources_admin/assets/css/flag-icon.min.css">
+    <link rel="stylesheet" href="<?php echo base_url(); ?>webresources_admin/assets/css/cs-skin-elastic.css">
     <!-- <link rel="stylesheet" href="assets/css/bootstrap-select.less"> -->
-    <link rel="stylesheet" href="<?php echo base_url(); ?>webresources_admin/scss/style.css">
+    <link rel="stylesheet" href="<?php echo base_url(); ?>webresources_admin/assets/scss/style.css">
 
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800' rel='stylesheet' type='text/css'>
 </head>
@@ -57,9 +57,9 @@
 </div>
 
 
-<script src="<?php echo base_url(); ?>webresources_admin/js/vendor/jquery-2.1.4.min.js"></script>
-<script src="<?php echo base_url(); ?>webresources_admin/js/popper.min.js"></script>
-<script src="<?php echo base_url(); ?>webresources_admin/js/plugins.js"></script>
-<script src="<?php echo base_url(); ?>webresources_admin/js/main.js"></script>
+<script src="<?php echo base_url(); ?>webresources_admin/assets/js/vendor/jquery-2.1.4.min.js"></script>
+<script src="<?php echo base_url(); ?>webresources_admin/assets/js/popper.min.js"></script>
+<script src="<?php echo base_url(); ?>webresources_admin/assets/js/plugins.js"></script>
+<script src="<?php echo base_url(); ?>webresources_admin/assets/js/main.js"></script>
 </body>
 </html>

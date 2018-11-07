@@ -65,3 +65,6 @@ $route['album/(:any)'] = 'webapp/program/album/$1';
 
 //admin
 $route['login'] = 'webapp/center/dispatcher/login';
+$route['admin'] = 'admin/dashboard/index';
+$route['logout'] = 'admin/dashboard/logout';
+$route['loginForm'] = 'admin/dashboard/login_submit';

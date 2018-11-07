@@ -282,7 +282,7 @@
                     <div class="hocvien_slides owl-carousel">
                         <?php foreach ($students as $item) { ?>
                             <div class="single-shot">
-                                <img src="<?php echo base_url() . $item->img; ?>" alt="">
+                                <img class="hocvien_slides_img" src="<?php echo base_url() . $item->img; ?>" alt="">
                             </div>
                         <?php } ?>
                     </div>
