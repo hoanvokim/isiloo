@@ -6,7 +6,7 @@
  * Date: 31.10.18
  * Time: 11:19
  */
-class Category_model extends Entity_model
+class Category_model extends MY_Model
 {
     public $table_name = "category";
 

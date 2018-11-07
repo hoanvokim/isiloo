@@ -6,7 +6,7 @@
  * Time: 13:11
  */
 
-class News_model extends Entity_model
+class News_model extends MY_Model
 {
 
     public $table_name = 'news';

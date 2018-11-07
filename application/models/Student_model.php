@@ -6,7 +6,7 @@
  * Date: 06.11.18
  * Time: 10:42
  */
-class Student_model extends Entity_model
+class Student_model extends MY_Model
 {
 
     public $table_name = "student";

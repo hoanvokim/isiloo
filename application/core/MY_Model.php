@@ -6,7 +6,7 @@
  * Time: 14:10
  */
 
-class Entity_model extends CI_Model
+class MY_Model extends CI_Model
 {
     public $table_name;
 

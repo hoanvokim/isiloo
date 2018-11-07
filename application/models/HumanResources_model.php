@@ -6,7 +6,7 @@
  * Time: 13:46
  */
 
-class HumanResources_model extends Entity_model
+class HumanResources_model extends MY_Model
 {
     public $table_name = "human_resources";
 

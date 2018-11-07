@@ -16,7 +16,6 @@ class Center extends CI_Controller
     {
         parent::__construct();
         //Loading model
-        $this->load->model('Entity_model');
         $this->load->model('News_model');
         $this->load->model('Data_model');
         $this->load->model('Student_model');

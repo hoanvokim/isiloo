@@ -6,7 +6,7 @@
  * Time: 14:06
  */
 
-class Gallery_model extends Entity_model
+class Gallery_model extends MY_Model
 {
 
     public $table_name = "gallery";

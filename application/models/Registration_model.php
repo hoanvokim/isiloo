@@ -6,7 +6,7 @@
  * Time: 11:37
  */
 
-class Registration_model extends Entity_model
+class Registration_model extends MY_Model
 {
 
     public $table_name = "registration";

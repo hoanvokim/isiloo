@@ -6,7 +6,7 @@
  * Time: 15:22
  */
 
-class Albums_model extends Entity_model
+class Albums_model extends MY_Model
 {
 
     public $table_name = "albums";

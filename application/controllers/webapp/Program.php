@@ -13,7 +13,6 @@ class Program extends CI_Controller
     {
         parent::__construct();
         //Loading model
-        $this->load->model('Entity_model');
         $this->load->model('News_model');
         $this->load->model('Category_model');
         $this->load->model('Tag_model');

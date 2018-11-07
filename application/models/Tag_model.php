@@ -5,7 +5,7 @@
  * Date: 06.11.18
  * Time: 13:17
  */
-class Tag_model extends Entity_model
+class Tag_model extends MY_Model
 {
 
     public $table_name = "tag";
