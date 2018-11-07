@@ -416,7 +416,7 @@ p {
 }
 
 .menu_area #nav .nav-link {
-    color: #fff;
+    color: #fff !important;
     display: block;
     font-size: 16px;
     font-weight: 100;
