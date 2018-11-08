@@ -12,6 +12,7 @@ class Dashboard extends CI_Controller
     {
         parent::__construct();
         //Loading model
+        $this->load->helper('url');
         $this->load->model('User_model');
     }
 
@@ -33,10 +34,12 @@ class Dashboard extends CI_Controller
         if ($this->form_validation->run() == FALSE) {
             if (isset($this->session->userdata['logged_in'])) {
                 $this->load->view('admin/dashboard');
-            } else {
+            }
+            else {
                 $this->load->view('admin/login');
             }
-        } else {
+        }
+        else {
             $result = $this->User_model->login($this->input->post('username'), $this->input->post('password'));
             if ($result == TRUE) {
 
@@ -49,13 +52,15 @@ class Dashboard extends CI_Controller
                     );
                     // Add user data in session
                     $this->session->set_userdata('logged_in', $session_data);
-                    $this->load->view('admin/dashboard');
+                    redirect(base_url() . 'admin');
+
                 }
-            } else {
-                $data = array(
-                    'error_message' => 'Invalid Username or Password'
-                );
-                $this->load->view('admin/login', $data);
+            }
+            else {
+                //Flashdata is a type of session data which will only available for the next request and automatically destroyed after that.
+                $this->session->set_flashdata('msg', 'Invalid Username or Password.');
+                $this->session->flashdata('msg');
+                $this->load->view('admin/login');
             }
         }
     }
@@ -67,8 +72,9 @@ class Dashboard extends CI_Controller
             'username' => ''
         );
         $this->session->unset_userdata('logged_in', $sess_array);
-        $data['message_display'] = 'Successfully Logout';
-        $this->load->view('admin/login', $data);
+        $this->session->set_flashdata('msg', 'Successfully Logout.');
+        $this->session->flashdata('msg');
+        redirect(base_url() . 'login');
     }
 
     public function is_login()

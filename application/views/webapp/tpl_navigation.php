@@ -19,20 +19,18 @@
                             <img src="<?php echo base_url(); ?>webresources/img/issi/logoWhite.png" alt="">
                         </a>
                         <!-- Menu Area -->
-                        <?php if ($active_page == 'home') { ?>
-                            <div class="collapse navbar-collapse" id="ca-navbar">
-                                <ul class="navbar-nav ml-auto" id="nav">
-                                    <li class="nav-item active"><a class="nav-link" href="#home">Trang chủ</a></li>
-                                    <li class="nav-item"><a class="nav-link" href="#chuongtrinh">Chương trình</a></li>
-                                    <li class="nav-item"><a class="nav-link" href="#truongdaihoc">Trường đại học</a>
-                                    </li>
-                                    <li class="nav-item"><a class="nav-link" href="#hocbong">Học bổng</a></li>
-                                    <li class="nav-item"><a class="nav-link" href="#thongtinduhoc">Thông tin du học</a>
-                                    </li>
-                                    <li class="nav-item"><a class="nav-link" href="#issiloo">ISSILOO</a></li>
-                                </ul>
-                            </div>
-                        <?php } ?>
+                        <div class="collapse navbar-collapse" id="ca-navbar">
+                            <ul class="navbar-nav ml-auto" id="nav">
+                                <li class="nav-item active"><a class="nav-link" href="#home">Trang chủ</a></li>
+                                <li class="nav-item"><a class="nav-link" href="#chuongtrinh">Chương trình</a></li>
+                                <li class="nav-item"><a class="nav-link" href="#truongdaihoc">Trường đại học</a>
+                                </li>
+                                <li class="nav-item"><a class="nav-link" href="#hocbong">Học bổng</a></li>
+                                <li class="nav-item"><a class="nav-link" href="#thongtinduhoc">Thông tin du học</a>
+                                </li>
+                                <li class="nav-item"><a class="nav-link" href="#issiloo">ISSILOO</a></li>
+                            </ul>
+                        </div>
                     </nav>
                 </div>
                 <div class="wrapper cf">
@@ -40,7 +38,7 @@
                         <ul class="first-nav">
                             <li><a href="<?php echo base_url() . 'news/du-hoc-han-quoc'; ?>">Du học Hàn Quốc</a></li>
                             <li><a href="<?php echo base_url() . 'news/du-hoc-nghe-han-quoc'; ?>">Du học Nghề Hàn
-                                    Quốc</a></li>
+                                                                                                  Quốc</a></li>
                             <li><a href="<?php echo base_url() . 'news/truong-dai-hoc'; ?>">Trường đại học</a></li>
                             <li><a href="<?php echo base_url() . 'news/chi-phi'; ?>">Chi phí</a></li>
                             <li><a href="<?php echo base_url() . 'news/hoc-bong'; ?>">Học bổng</a></li>
@@ -51,9 +49,9 @@
                             </li>
                             <li><a href="<?php echo base_url() . 'news/luyen-thi-xkld'; ?>">Luyện thi XKLĐ</a></li>
                             <li><a href="<?php echo base_url() . 'center/thanh-tich-hoc-vien'; ?>">Thành tích học
-                                    viên</a></li>
+                                                                                                   viên</a></li>
                             <li><a href="<?php echo base_url() . 'programs/hoat-dong-ngoai-khoa'; ?>">Hoạt động ngoại
-                                    khóa</a></li>
+                                                                                                      khóa</a></li>
                             <li><a href="<?php echo base_url() . 'programs/tu-hoc-tieng-han'; ?>">Tự học tiếng Hàn</a>
                             </li>
                             <li><a href="<?php echo base_url() . 'news/tin-tuc'; ?>">Tin Tức</a></li>
@@ -78,18 +76,18 @@
 <section class="button-bottom navbar fixed-bottom">
     <div id="popUpSearch" class="showSearch">
         <?php echo form_open_multipart('searchForm'); ?>
-            <input type="text" name="search" class="form-control search"
-                   placeholder="Tìm kiếm"/>
+        <input type="text" name="search" class="form-control search"
+               placeholder="Tìm kiếm"/>
         </form>
     </div>
     <div id="popUpDial" class="showDial">
         <?php echo form_open_multipart('dialForm'); ?>
-            <input type="text" name="dialName" class="form-control name"
-                   placeholder="Tên"/>
-            <input type="text" name="dialPhone" class="form-control phone"
-                   placeholder="Số điện thoại"/>
-            <input type="submit" class="submit"
-                   value="Gửi">
+        <input type="text" name="dialName" class="form-control name"
+               placeholder="Tên"/>
+        <input type="text" name="dialPhone" class="form-control phone"
+               placeholder="Số điện thoại"/>
+        <input type="submit" class="submit"
+               value="Gửi">
         </form>
     </div>
 </section>
