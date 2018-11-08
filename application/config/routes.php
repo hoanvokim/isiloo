@@ -63,8 +63,17 @@ $route['news/news_content/(:any)'] = 'webapp/news/content/$1';
 $route['programs/(:any)'] = 'webapp/program/all/$1';
 $route['album/(:any)'] = 'webapp/program/album/$1';
 
-//admin
+//essential
 $route['login'] = 'webapp/center/dispatcher/login';
 $route['admin'] = 'admin/dashboard/index';
 $route['logout'] = 'admin/dashboard/logout';
 $route['loginForm'] = 'admin/dashboard/login_submit';
+
+//administration
+$route['admin/news'] = 'admin/news';
+$route['admin/news/create'] = 'admin/news/create';
+$route['admin/news/empty'] = 'admin/news/news_empty';
+$route['admin/news/update/:num'] = 'admin/news/update';
+$route['admin/news/delete/:num'] = 'admin/news/delete';
+$route['admin-news-create-form'] = 'admin/news/create_submit';
+$route['admin-news-update-form'] = 'admin/news/update_submit';
