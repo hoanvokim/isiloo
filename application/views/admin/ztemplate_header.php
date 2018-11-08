@@ -28,6 +28,10 @@
     <link href="<?php echo base_url(); ?>webresources_admin/assets/css/lib/vector-map/jqvmap.min.css" rel="stylesheet">
 
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800' rel='stylesheet' type='text/css'>
+    <!-- Include Editor style. -->
+    <link href='https://cdn.jsdelivr.net/npm/froala-editor@2.9.0/css/froala_editor.min.css' rel='stylesheet' type='text/css' />
+    <link href='https://cdn.jsdelivr.net/npm/froala-editor@2.9.0/css/froala_style.min.css' rel='stylesheet' type='text/css' />
+
 
     <!-- <script type="text/javascript" src="https://cdn.jsdelivr.net/html5shiv/3.7.3/html5shiv.min.js"></script> -->
 

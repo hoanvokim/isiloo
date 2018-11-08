@@ -38,7 +38,7 @@
                         <ul class="first-nav">
                             <li><a href="<?php echo base_url() . 'news/du-hoc-han-quoc'; ?>">Du học Hàn Quốc</a></li>
                             <li><a href="<?php echo base_url() . 'news/du-hoc-nghe-han-quoc'; ?>">Du học Nghề Hàn
-                                                                                                  Quốc</a></li>
+                                    Quốc</a></li>
                             <li><a href="<?php echo base_url() . 'news/truong-dai-hoc'; ?>">Trường đại học</a></li>
                             <li><a href="<?php echo base_url() . 'news/chi-phi'; ?>">Chi phí</a></li>
                             <li><a href="<?php echo base_url() . 'news/hoc-bong'; ?>">Học bổng</a></li>
@@ -49,9 +49,9 @@
                             </li>
                             <li><a href="<?php echo base_url() . 'news/luyen-thi-xkld'; ?>">Luyện thi XKLĐ</a></li>
                             <li><a href="<?php echo base_url() . 'center/thanh-tich-hoc-vien'; ?>">Thành tích học
-                                                                                                   viên</a></li>
+                                    viên</a></li>
                             <li><a href="<?php echo base_url() . 'programs/hoat-dong-ngoai-khoa'; ?>">Hoạt động ngoại
-                                                                                                      khóa</a></li>
+                                    khóa</a></li>
                             <li><a href="<?php echo base_url() . 'programs/tu-hoc-tieng-han'; ?>">Tự học tiếng Hàn</a>
                             </li>
                             <li><a href="<?php echo base_url() . 'news/tin-tuc'; ?>">Tin Tức</a></li>

@@ -12,6 +12,8 @@
 <script src="<?php echo base_url(); ?>webresources_admin/assets/js/lib/vector-map/jquery.vmap.min.js"></script>
 <script src="<?php echo base_url(); ?>webresources_admin/assets/js/lib/vector-map/jquery.vmap.sampledata.js"></script>
 <script src="<?php echo base_url(); ?>webresources_admin/assets/js/lib/vector-map/country/jquery.vmap.world.js"></script>
+<!-- Include JS file. -->
+<script type='text/javascript' src='https://cdn.jsdelivr.net/npm/froala-editor@2.9.0/js/froala_editor.min.js'></script>
 <script>
     (function ($) {
         "use strict";
