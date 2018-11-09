@@ -25,4 +25,15 @@ class MY_Controller extends CI_Controller
         $user = $this->session->userdata('logged_in');
         return isset($user);
     }
+
+    public function get_config()
+    {
+        return array(
+            'upload_path' => "./assets/news",
+            'allowed_types' => "gif|jpg|png|jpeg",
+            'overwrite' => TRUE,
+            'max_size' => "20480000", // Can be set to particular file size , here it is 2 MB(2048 Kb)
+        );
+
+    }
 }
