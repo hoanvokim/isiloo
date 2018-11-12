@@ -69,7 +69,7 @@ $route['admin'] = 'admin/dashboard/index';
 $route['logout'] = 'admin/dashboard/logout';
 $route['loginForm'] = 'admin/dashboard/login_submit';
 
-//administration
+//administration - news
 $route['admin/news'] = 'admin/news';
 $route['admin/news/create'] = 'admin/news/create';
 $route['admin/news/empty'] = 'admin/news/news_empty';
@@ -77,3 +77,13 @@ $route['admin/news/update/:num'] = 'admin/news/update';
 $route['admin/news/delete/:num'] = 'admin/news/delete';
 $route['admin-news-create-form'] = 'admin/news/create_submit';
 $route['admin-news-update-form'] = 'admin/news/update_submit';
+
+
+$route['admin/category'] = 'admin/category';
+$route['admin/category/empty'] = 'admin/category/category_empty';
+$route['admin/category/sub/:num'] = 'admin/category/sub';
+$route['admin/category/create'] = 'admin/category/create';
+$route['admin/category/update/:num'] = 'admin/category/update';
+$route['admin/category/delete/:num'] = 'admin/category/delete';
+$route['admin-category-create-form'] = 'admin/category/create_submit';
+$route['admin-category-update-form'] = 'admin/category/update_submit';
