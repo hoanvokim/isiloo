@@ -79,11 +79,11 @@
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
                        aria-expanded="false"> <i class="menu-icon ti-layout-width-default"></i>Danh mục</a>
                     <ul class="sub-menu children dropdown-menu show">
-                        <li class="active"><i class="fa fa-puzzle-piece"></i><a href="ui-buttons.html">Thêm "Tự học
+                        <li class="active"><i class="fa fa-puzzle-piece"></i><a href="<?php echo base_url() . 'admin/category/sub/'. TUHOCTIENGHAN; ?>">Thêm "Tự học
                                 Tiếng Hàn"</a></li>
-                        <li><i class="fa fa-id-badge"></i><a href="ui-badges.html">Thêm "Đào tạo Hàn ngữ"</a></li>
-                        <li><i class="fa fa-id-badge"></i><a href="ui-badges.html">Tìm và cập nhật</a></li>
-                        <li><i class="fa fa-bars"></i><a href="ui-tabs.html">Các danh mục trống</a></li>
+                        <li><i class="fa fa-id-badge"></i><a href="<?php echo base_url() . 'admin/category/sub/'. DAOTAOHANNGU; ?>">Thêm "Đào tạo Hàn ngữ"</a></li>
+                        <li><i class="fa fa-id-badge"></i><a href="<?php echo base_url() . 'admin/category' ?>">Tìm và cập nhật</a></li>
+                        <li><i class="fa fa-bars"></i><a href="<?php echo base_url() . 'admin/category/empty' ?>">Các danh mục trống</a></li>
                     </ul>
                 </li>
                 <li class="menu-item-has-children dropdown show">

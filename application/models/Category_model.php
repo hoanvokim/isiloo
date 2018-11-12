@@ -54,4 +54,10 @@ class Category_model extends MY_Model
         return $this->db->get($this->table_name)->result();
     }
 
+    public function findAllCategories()
+    {
+        $sql = "select cat.id, cat.name,cat1.name as parent_name, cat.slug, cat.created_date, cat.updated_date from category cat left join category cat1 on cat.parent_id = cat1.id ";
+        return $this->db->query($sql)->result();
+    }
+
 }

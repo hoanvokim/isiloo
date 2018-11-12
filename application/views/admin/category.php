@@ -37,7 +37,7 @@
                             ><i class="fa fa-plus"></i> Thêm bài viết</a>
                         </div>
                         <div class="card-body">
-                            <table id="bootstrap-data-table" class="table table-striped table-bordered">
+                            <table id="all-category-data-table" class="table table-striped table-bordered">
                                 <thead>
                                 <tr>
                                     <th>Id</th>

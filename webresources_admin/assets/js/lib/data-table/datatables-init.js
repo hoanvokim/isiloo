@@ -12,6 +12,14 @@
         pageLength: 30
     });
 
+    $('#all-category-data-table').DataTable({
+        "order": [[1, "asc"]],
+        stateSave: true,
+        "pagingType": "full_numbers",
+        lengthMenu: [[10, 30, 50, -1], [10, 30, 50, "Xem tất Cả"]],
+        pageLength: 30
+    });
+
     $('#bootstrap-data-table-export').DataTable({
         dom: 'lBfrtip',
         lengthMenu: [[10, 25, 50, -1], [10, 25, 50, "All"]],

@@ -19,7 +19,7 @@ class Category extends MY_Controller
     public function index()
     {
         $data['title'] = 'Quản lý Danh mục';
-        $data['categories'] = $this->Category_model->findAll();
+        $data['categories'] = $this->Category_model->findAllCategories();
         $this->load->view('admin/category', $data);
     }
 
