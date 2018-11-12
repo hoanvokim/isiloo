@@ -6,7 +6,7 @@
  * Date: 12.11.18
  * Time: 15:40
  */
-class News extends MY_Controller
+class Category extends MY_Controller
 {
     public function __construct()
     {
@@ -134,43 +134,36 @@ class News extends MY_Controller
                 );
             }
 
-            $news = $this->News_model->findById($this->input->post('newsId'));
-            $data['newsId'] = $this->input->post('newsId');
-            $data['catId'] = $this->input->post('category');
-            $data['img_src'] = $news->img_square;
+            $category = $this->News_model->findById($this->input->post('id'));
+            $data['id'] = $this->input->post('id');
+            $data['parent_id'] = $this->input->post('parent_id');
+            $data['img'] = $category->img;
             $data['slug'] = $this->input->post('slug');
-            $data['title_header'] = $this->input->post('title_header');
-            $data['description_header'] = $this->input->post('description_header');
-            $data['keyword_header'] = $this->input->post('keyword_header');
-            $data['title'] = $this->input->post('title');
-            $data['content'] = $this->input->post('contenteditor');
-            $data['summary'] = $this->input->post('summaryeditor');
-            $data['categories'] = $this->Category_model->findAll();
+            $data['name'] = $this->input->post('name');
+            $data['sort_index'] = $this->input->post('sort_index');
             $data['showmessages'] = 'Cập nhật thành công!';
-            $this->load->view('admin/news_update', $data);
+            $this->load->view('admin/category_update', $data);
 
         } else if (isset($_POST["delete"])) {
             $this->delete();
         } else if (isset($_POST["cancel"])) {
-            redirect('admin/news', 'refresh');
-        } else if (isset($_POST["remove-current"])) {
-            $this->News_model->updateImage($this->input->post('newsId'));
-            if ((strpos($this->input->post('img_src'), 'youtube') == false) && file_exists('./' . $this->input->post('img_src'))) {
-                unlink('./' . $this->input->post('img_src'));
+            if ($this->input->post('parent_id') != null) {
+                redirect('admin/category/sub/' . $this->input->post('parent_id'), 'refresh');
             }
-            $data['newsId'] = $this->input->post('newsId');
-            $data['catId'] = $this->input->post('category');
-            $data['img_src'] = '';
+            redirect('admin/category', 'refresh');;
+        } else if (isset($_POST["remove-current"])) {
+            $this->Category_model->updateImage($this->input->post('newsId'));
+            if ((strpos($this->input->post('img'), 'youtube') == false) && file_exists('./' . $this->input->post('img'))) {
+                unlink('./' . $this->input->post('img'));
+            }
+            $data['id'] = $this->input->post('id');
+            $data['parent_id'] = $this->input->post('parent_id');
+            $data['img'] = '';
             $data['slug'] = $this->input->post('slug');
-            $data['title_header'] = $this->input->post('title_header');
-            $data['description_header'] = $this->input->post('description_header');
-            $data['keyword_header'] = $this->input->post('keyword_header');
-            $data['title'] = $this->input->post('title');
-            $data['content'] = $this->input->post('contenteditor');
-            $data['summary'] = $this->input->post('summaryeditor');
-            $data['categories'] = $this->Category_model->findAll();
+            $data['name'] = $this->input->post('name');
+            $data['sort_index'] = $this->input->post('sort_index');
             $data['showmessages'] = 'Cập nhật thành công!';
-            $this->load->view('admin/news_update', $data);
+            $this->load->view('admin/category_update', $data);
         }
     }
 

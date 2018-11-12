@@ -134,13 +134,13 @@ class News_model extends MY_Model
         return $this->db->query($sql)->result();
     }
 
-    public function updateImage($newsId)
+    public function updateImage($id)
     {
         $data = array(
             'img_square' => '',
             'img_square' => ''
         );
-        $this->db->where('id', $newsId);
+        $this->db->where('id', $id);
         $this->db->update($this->table_name, $data);
     }
 }

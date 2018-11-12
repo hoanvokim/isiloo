@@ -67,4 +67,15 @@ class MY_Model extends CI_Model
         $this->db->where('id', $id);
         $this->db->update($this->table_name, $data);
     }
+
+
+
+    public function updateImage($id)
+    {
+        $data = array(
+            'img' => ''
+        );
+        $this->db->where('id', $id);
+        $this->db->update($this->table_name, $data);
+    }
 }
