@@ -91,7 +91,7 @@ class News_model extends MY_Model
         for ($i = 0; $i < $cnt - 1; $i++) {
             $sql = $sql . $catId[$i] . ",";
         }
-        $sql = $sql . $catId[$cnt - 1] . ") order by view_count desc limit ".$limit;
+        $sql = $sql . $catId[$cnt - 1] . ") order by view_count desc limit " . $limit;
         return $this->db->query($sql)->result();
     }
 
@@ -104,5 +104,43 @@ class News_model extends MY_Model
         }
         $sql = $sql . $catId[$cnt - 1] . ") ORDER BY RAND() desc limit 6";
         return $this->db->query($sql)->result();
+    }
+
+    public function findAllWithCategoryInfo()
+    {
+        $sql = "select $this->table_name.id as id,
+                $this->table_name.slug as slug,
+                $this->table_name.title as title, 
+                $this->table_name.created_date as created_date, 
+                $this->table_name.updated_date as updated_date, 
+                category.slug as cat_slug, 
+                category.id as cat_id, 
+                category.name as cat_name 
+                from $this->table_name join category on category.id = $this->table_name.category_id";
+        return $this->db->query($sql)->result();
+    }
+
+    public function findAllWithNotCategory()
+    {
+        $sql = "select $this->table_name.id as id,
+                $this->table_name.slug as slug,
+                $this->table_name.title as title, 
+                $this->table_name.created_date as created_date, 
+                $this->table_name.updated_date as updated_date, 
+                category.slug as cat_slug, 
+                category.id as cat_id, 
+                category.name as cat_name 
+                from $this->table_name left join category on category.id = $this->table_name.category_id WHERE $this->table_name.category_id IS NULL";
+        return $this->db->query($sql)->result();
+    }
+
+    public function updateImage($newsId)
+    {
+        $data = array(
+            'img_square' => '',
+            'img_square' => ''
+        );
+        $this->db->where('id', $newsId);
+        $this->db->update($this->table_name, $data);
     }
 }
