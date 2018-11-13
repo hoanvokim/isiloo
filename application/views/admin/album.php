@@ -32,12 +32,12 @@
                     <div class="card">
                         <div class="card-header">
                             <strong class="card-title">Data Table</strong>
-                            <a href="<?php echo base_url() . "admin/news/create/" ?>"
+                            <a href="<?php echo base_url() . "admin/album/create/" ?>"
                                class="btn btn-primary btn-sm pull-right"
                             ><i class="fa fa-plus"></i> Thêm bài viết</a>
                         </div>
                         <div class="card-body">
-                            <table id="bootstrap-data-table" class="table table-striped table-bordered">
+                            <table id="all-album-data-table" class="table table-striped table-bordered">
                                 <thead>
                                 <tr>
                                     <th>Id</th>
@@ -49,19 +49,18 @@
                                 </tr>
                                 </thead>
                                 <tbody>
-                                <?php foreach ($news as $item) { ?>
+                                <?php foreach ($albums as $item) { ?>
                                     <tr>
                                         <td><?php echo $item->id; ?></td>
                                         <td>
-                                            <a href="<?php echo base_url() . "admin/news/update/" . $item->id; ?>"> <?php echo $item->title; ?> </a>
+                                            <a href="<?php echo base_url() . "admin/album/update/" . $item->id; ?>"> <?php echo $item->title; ?> </a>
                                         </td>
-                                        <td><?php echo $item->cat_name; ?></td>
                                         <td><?php echo $item->created_date; ?></td>
                                         <td><?php echo $item->updated_date; ?></td>
-                                        <td><a href="<?php echo base_url() . "news/news_content/" . $item->slug; ?>"
+                                        <td><a href="<?php echo base_url() . "albums/album_content/" . $item->slug; ?>"
                                                class="btn btn-success btn-sm"><i
                                                         class="fa fa-eye"></i> Xem hiển thị</a>
-                                            <a href="<?php echo base_url() . "admin/news/delete/" . $item->id; ?>"
+                                            <a href="<?php echo base_url() . "admin/album/delete/" . $item->id; ?>"
                                                class="btn btn-danger btn-sm"
                                                onclick="return confirm('Bạn có muốn xoá không?');"><i
                                                         class="fa fa-close"></i> Xoá</a></td>

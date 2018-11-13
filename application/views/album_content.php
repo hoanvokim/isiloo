@@ -11,10 +11,10 @@
         <div class="container">
             <div class="row wow zoomIn breadcrumb-area" data-wow-delay="0.2s">
                 <a href="<?php echo base_url(); ?>"><h5>Trang chủ /&nbsp;</h5></a>
-                <h5 class="current"><?php echo $album->name; ?></h5>
+                <h5 class="current"><?php echo $album->title; ?></h5>
             </div>
             <div class="row wow zoomIn" data-wow-delay="0.2s">
-                <h1><?php echo $album->name; ?></h1>
+                <h1><?php echo $album->title; ?></h1>
             </div>
             <div class="row pad-top-30">
                 <?php foreach ($imgs as $item) { ?>
