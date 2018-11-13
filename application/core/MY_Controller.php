@@ -36,4 +36,15 @@ class MY_Controller extends CI_Controller
         );
 
     }
+
+    public function get_config_base()
+    {
+        return array(
+            'upload_path' => "./assets",
+            'allowed_types' => "gif|jpg|png|jpeg",
+            'overwrite' => TRUE,
+            'max_size' => "20480000", // Can be set to particular file size , here it is 2 MB(2048 Kb)
+        );
+
+    }
 }

@@ -23,7 +23,7 @@
 
         $("#text-title").keyup(function () {
             var text = convertVietnamese($(this).val()).split(' ').join('-');
-            $('#text-slug').val(text);
+            $('#text-slug').val(text.toLowerCase());
 
         });
 

@@ -30,31 +30,33 @@ class Category extends MY_Controller
         $this->load->view('admin/category_empty', $data);
     }
 
-    public function sub($parentId)
+    public function sub()
     {
-        $parent_category = $this->Category_model->findById($parentId);
+        $parent_category = $this->Category_model->findById($this->uri->segment(4));
         $data['title'] = 'Quản lý Danh mục của: ' . $parent_category->name;
-        $data['categories'] = $this->Category_model->findAllSubById($parentId);
+        $data['categories'] = $this->Category_model->findAllByParentId($parent_category->id);
+        $data['parent_category'] = $parent_category;
         $this->load->view('admin/category_sub', $data);
     }
 
-    public function create($parent_id)
+    public function create()
     {
-        $data['title'] = 'Tạo Danh mục mới';
+        $parent_id = $this->uri->segment(4);
         $data['parent_id'] = $parent_id;
         $this->load->view('admin/category_create', $data);
     }
 
-    public function update($categoryId)
+    public function update()
     {
-        $category = $this->Category_model->findById($categoryId);
+        $category = $this->Category_model->findById($this->uri->segment(4));
         $data['title'] = 'Cập nhật Danh mục ' . $category->name;
-        $data['id'] = $category->id;
-        $data['name'] = $category->name;
+        $data['category_id'] = $category->id;
+        $data['title'] = $category->name;
         $data['slug'] = $category->slug;
-        $data['img'] = $category->img;
+        $data['img_src'] = $category->img;
         $data['sort_index'] = $category->sort_index;
-        $this->load->view('admin/category_empty', $data);
+        $data['parent_id'] = $this->uri->segment(4);
+        $this->load->view('admin/category_update', $data);
     }
 
     public function delete()
@@ -73,7 +75,7 @@ class Category extends MY_Controller
     public function create_submit()
     {
         if (isset($_POST["save"])) {
-            $this->load->library('upload', $this->get_config());
+            $this->load->library('upload', $this->get_config_base());
             if ($this->upload->do_upload('thumbnail')) {
                 $upload_files = $this->upload->data();
                 $file_path = 'assets/' . $upload_files['file_name'];
@@ -81,7 +83,7 @@ class Category extends MY_Controller
                 $this->Category_model->insert(
                     $this->input->post('parent_id'),
                     $this->input->post('slug'),
-                    $this->input->post('name'),
+                    $this->input->post('title'),
                     $file_path,
                     $this->input->post('sort_index')
                 );
@@ -89,7 +91,7 @@ class Category extends MY_Controller
                 $this->Category_model->insert(
                     $this->input->post('parent_id'),
                     $this->input->post('slug'),
-                    $this->input->post('name'),
+                    $this->input->post('title'),
                     null,
                     $this->input->post('sort_index')
                 );
@@ -111,58 +113,57 @@ class Category extends MY_Controller
     public function update_submit()
     {
         if (isset($_POST["save"])) {
-            $this->load->library('upload', $this->get_config());
+            $this->load->library('upload', $this->get_config_base());
             if ($this->upload->do_upload('thumbnail')) {
                 $upload_files = $this->upload->data();
-                $file_path = 'assets/news/' . $upload_files['file_name'];
+                $file_path = 'assets/' . $upload_files['file_name'];
                 $this->Category_model->update(
-                    $this->input->post('id'),
+                    $this->input->post('category_id'),
                     $this->input->post('parent_id'),
                     $this->input->post('slug'),
-                    $this->input->post('name'),
+                    $this->input->post('title'),
                     $file_path,
                     $this->input->post('sort_index')
                 );
             } else {
                 $this->Category_model->update(
-                    $this->input->post('id'),
+                    $this->input->post('category_id'),
                     $this->input->post('parent_id'),
                     $this->input->post('slug'),
-                    $this->input->post('name'),
-                    $this->input->post('img'),
+                    $this->input->post('title'),
+                    $this->input->post('img_src'),
                     $this->input->post('sort_index')
                 );
             }
 
-            $category = $this->News_model->findById($this->input->post('id'));
-            $data['id'] = $this->input->post('id');
+            $category = $this->Category_model->findById($this->input->post('category_id'));
+            $data['category_id'] = $this->input->post('category_id');
             $data['parent_id'] = $this->input->post('parent_id');
-            $data['img'] = $category->img;
+            $data['img_src'] = $category->img;
             $data['slug'] = $this->input->post('slug');
-            $data['name'] = $this->input->post('name');
+            $data['title'] = $this->input->post('title');
             $data['sort_index'] = $this->input->post('sort_index');
             $data['showmessages'] = 'Cập nhật thành công!';
             $this->load->view('admin/category_update', $data);
-
         } else if (isset($_POST["delete"])) {
             $this->delete();
         } else if (isset($_POST["cancel"])) {
             if ($this->input->post('parent_id') != null) {
                 redirect('admin/category/sub/' . $this->input->post('parent_id'), 'refresh');
             }
-            redirect('admin/category', 'refresh');;
+            redirect('admin/category', 'refresh');
         } else if (isset($_POST["remove-current"])) {
-            $this->Category_model->updateImage($this->input->post('newsId'));
-            if ((strpos($this->input->post('img'), 'youtube') == false) && file_exists('./' . $this->input->post('img'))) {
-                unlink('./' . $this->input->post('img'));
+            $this->Category_model->updateImage($this->input->post('id'));
+            if ((strpos($this->input->post('img'), 'youtube') == false) && file_exists('./' . $this->input->post('img_src'))) {
+                unlink('./' . $this->input->post('img_src'));
             }
-            $data['id'] = $this->input->post('id');
+            $data['category_id'] = $this->input->post('category_id');
             $data['parent_id'] = $this->input->post('parent_id');
-            $data['img'] = '';
+            $data['img_src'] = '';
             $data['slug'] = $this->input->post('slug');
-            $data['name'] = $this->input->post('name');
+            $data['title'] = $this->input->post('title');
             $data['sort_index'] = $this->input->post('sort_index');
-            $data['showmessages'] = 'Cập nhật thành công!';
+            $data['showmessages'] = 'Xóa ảnh thành công!';
             $this->load->view('admin/category_update', $data);
         }
     }

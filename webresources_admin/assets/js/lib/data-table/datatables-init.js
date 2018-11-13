@@ -13,7 +13,7 @@
     });
 
     $('#all-category-data-table').DataTable({
-        "order": [[1, "asc"]],
+        "order": [[0, "asc"]],
         stateSave: true,
         "pagingType": "full_numbers",
         lengthMenu: [[10, 30, 50, -1], [10, 30, 50, "Xem tất Cả"]],

@@ -185,7 +185,7 @@ class News extends MY_Controller
             $data['content'] = $this->input->post('contenteditor');
             $data['summary'] = $this->input->post('summaryeditor');
             $data['categories'] = $this->Category_model->findAll();
-            $data['showmessages'] = 'Cập nhật thành công!';
+            $data['showmessages'] = 'Xóa ảnh thành công!';
             $this->load->view('admin/news_update', $data);
         }
     }
