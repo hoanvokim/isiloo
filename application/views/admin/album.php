@@ -42,7 +42,6 @@
                                 <tr>
                                     <th>Id</th>
                                     <th>Tiêu đề</th>
-                                    <th>Phân nhóm</th>
                                     <th>Ngày tạo</th>
                                     <th>Ngày cập nhật</th>
                                     <th></th>

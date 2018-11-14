@@ -90,9 +90,9 @@
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
                        aria-expanded="false"> <i class="menu-icon ti-layout-width-default"></i>Hoạt động ngoại khoá</a>
                     <ul class="sub-menu children dropdown-menu show">
-                        <li class="active"><i class="fa fa-puzzle-piece"></i><a href="ui-buttons.html">Thêm hoạt
+                        <li class="active"><i class="fa fa-puzzle-piece"></i><a href="<?php echo base_url() . 'admin/album/create'; ?>">Thêm hoạt
                                 động</a></li>
-                        <li><i class="fa fa-id-badge"></i><a href="ui-badges.html">Tìm và cập nhật</a></li>
+                        <li><i class="fa fa-id-badge"></i><a href="<?php echo base_url() . 'admin/album'; ?>">Tìm và cập nhật</a></li>
                     </ul>
                 </li>
                 <li class="menu-item-has-children dropdown show">

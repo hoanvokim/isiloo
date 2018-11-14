@@ -78,7 +78,6 @@ $route['admin/news/delete/:num'] = 'admin/news/delete';
 $route['admin-news-create-form'] = 'admin/news/create_submit';
 $route['admin-news-update-form'] = 'admin/news/update_submit';
 
-
 $route['admin/category'] = 'admin/category';
 $route['admin/category/empty'] = 'admin/category/category_empty';
 $route['admin/category/sub/:num'] = 'admin/category/sub';
@@ -87,3 +86,11 @@ $route['admin/category/update/:num'] = 'admin/category/update';
 $route['admin/category/delete/:num'] = 'admin/category/delete';
 $route['admin-category-create-form'] = 'admin/category/create_submit';
 $route['admin-category-update-form'] = 'admin/category/update_submit';
+
+
+$route['admin/album'] = 'admin/albums';
+$route['admin/album/create'] = 'admin/albums/create';
+$route['admin/album/update/:num'] = 'admin/albums/update';
+$route['admin/album/delete/:num'] = 'admin/albums/delete';
+$route['admin-album-create-form'] = 'admin/albums/create_submit';
+$route['admin-album-update-form'] = 'admin/albums/update_submit';

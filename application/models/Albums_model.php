@@ -61,4 +61,12 @@ class Albums_model extends MY_Model
         $sql = "SELECT ag.img from $this->table_name a join albums_gallery ag on ag.album_id = a.id where a.id = $albumId";
         return $this->db->query($sql)->result();
     }
+
+    public function delete($album_id)
+    {
+        $this->db->where('album_id', $album_id);
+        $this->db->delete('albums_gallery');
+        $this->db->where('id', $album_id);
+        $this->db->delete($this->table_name);
+    }
 }

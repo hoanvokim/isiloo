@@ -16,7 +16,7 @@
         <div class="col-12">
             <div class="page-header float-left">
                 <div class="page-title">
-                    <h1>Thêm bài viết hoạt động mới mới</h1>
+                    <h1>Thêm bài viết hoạt động mới</h1>
                 </div>
             </div>
         </div>
@@ -96,6 +96,15 @@
                     <h3>Nội dung</h3>
                 </div>
                 <hr>
+                <div class="row form-group">
+                    <div class="col col-md-3"><label for="text-img-content" class=" form-control-label">Hình ảnh Trong bài viết</label></div>
+                    <div class="col-12 col-md-9">
+                        <input type='file' name='files[]' multiple id="text-img-content" size='20'/>
+                        <br/>
+                        <i>Lưu ý: Hình ảnh size chuẩn: 800 * 600px</i>
+                    </div>
+                </div>
+
                 <div class="row form-group">
                     <div class="col col-md-3"><label for="text-content" class=" form-control-label">Nội dung</label>
                     </div>
