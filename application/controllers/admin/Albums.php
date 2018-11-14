@@ -100,11 +100,7 @@ class Albums extends MY_Controller
                     // File upload
                     if ($this->upload->do_upload('file')) {
                         // Get data about the file
-                        $uploadData = $this->upload->data();
-                        $filename = 'assets/news/' . $uploadData['file_name'];
-
-                        // Initialize array
-                        $data['filenames'][] = $filename;
+                        $this->upload->data();
                     }
                 }
             }
@@ -116,20 +112,26 @@ class Albums extends MY_Controller
                 $this->input->post('title_header'),
                 $this->input->post('description_header'),
                 $this->input->post('keyword_header'),
-                $data['filenames']
+                $_FILES['files']['name']
             );
             redirect('admin/album', 'refresh');
         } else if (isset($_POST["reset"])) {
-            redirect('admin/news_create', 'refresh');
+            redirect('admin/album_create', 'refresh');
         } else if (isset($_POST["cancel"])) {
-            redirect('admin/news', 'refresh');
+            redirect('admin/album', 'refresh');
         }
     }
 
     public function update_submit()
     {
         if (isset($_POST["save"])) {
+
             $this->load->library('upload', $this->get_config());
+            $file_path = $this->input->post('img_src');
+            if ($this->upload->do_upload('thumbnail')) {
+                $upload_files = $this->upload->data();
+                $file_path = 'assets/news/' . $upload_files['file_name'];
+            }
             if ($this->upload->do_upload('thumbnail')) {
                 $upload_files = $this->upload->data();
                 $file_path = 'assets/news/' . $upload_files['file_name'];

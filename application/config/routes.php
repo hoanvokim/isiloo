@@ -87,10 +87,16 @@ $route['admin/category/delete/:num'] = 'admin/category/delete';
 $route['admin-category-create-form'] = 'admin/category/create_submit';
 $route['admin-category-update-form'] = 'admin/category/update_submit';
 
-
 $route['admin/album'] = 'admin/albums';
 $route['admin/album/create'] = 'admin/albums/create';
 $route['admin/album/update/:num'] = 'admin/albums/update';
 $route['admin/album/delete/:num'] = 'admin/albums/delete';
 $route['admin-album-create-form'] = 'admin/albums/create_submit';
 $route['admin-album-update-form'] = 'admin/albums/update_submit';
+
+$route['admin/university'] = 'admin/university';
+$route['admin/university/create'] = 'admin/university/create';
+$route['admin/university/update/:num'] = 'admin/university/update';
+$route['admin/university/delete/:num'] = 'admin/university/delete';
+$route['admin-university-create-form'] = 'admin/university/create_submit';
+$route['admin-university-update-form'] = 'admin/university/update_submit';

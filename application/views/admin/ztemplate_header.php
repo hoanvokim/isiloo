@@ -99,30 +99,30 @@
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
                        aria-expanded="false"> <i class="menu-icon ti-layout-width-default"></i>Các trường đại học</a>
                     <ul class="sub-menu children dropdown-menu show">
-                        <li class="active"><i class="fa fa-puzzle-piece"></i><a href="ui-buttons.html">Thêm mới</a></li>
-                        <li><i class="fa fa-id-badge"></i><a href="ui-badges.html">Tìm và cập nhật</a></li>
-                        <li><i class="fa fa-bars"></i><a href="ui-tabs.html">Các trường chưa có bài viết</a></li>
+                        <li class="active"><i class="fa fa-puzzle-piece"></i><a href="<?php echo base_url() . 'admin/university/create'; ?>">Thêm mới</a></li>
+                        <li><i class="fa fa-id-badge"></i><a href="<?php echo base_url() . 'admin/university'; ?>">Tìm và cập nhật</a></li>
+                        <li><i class="fa fa-bars"></i><a href="<?php echo base_url() . 'admin/university/empty'; ?>">Các trường chưa có bài viết</a></li>
                     </ul>
                 </li>
 
                 <h3 class="menu-title">Quản lý thông tin</h3><!-- /.menu-title -->
                 <li>
-                    <a href="#"> <i class="menu-icon fa fa-forward"></i>Thông tin trên website</a>
+                    <a href="<?php echo base_url() . 'admin/central/data_info'; ?>"> <i class="menu-icon fa fa-forward"></i>Thông tin trên website</a>
                 </li>
                 <li>
-                    <a href="#"> <i class="menu-icon fa fa-forward"></i>Nhân viên ISSILOO</a>
+                    <a href="<?php echo base_url() . 'admin/central/employee'; ?>"> <i class="menu-icon fa fa-forward"></i>Nhân viên ISSILOO</a>
                 </li>
                 <li>
-                    <a href="#"> <i class="menu-icon fa fa-forward"></i>Sinh viên</a>
+                    <a href="<?php echo base_url() . 'admin/central/student'; ?>"> <i class="menu-icon fa fa-forward"></i>Sinh viên</a>
                 </li>
                 <li>
-                    <a href="#"> <i class="menu-icon fa fa-forward"></i>Gallery</a>
+                    <a href="<?php echo base_url() . 'admin/central/gallery'; ?>"> <i class="menu-icon fa fa-forward"></i>Gallery</a>
                 </li>
                 <li>
-                    <a href="#"> <i class="menu-icon fa fa-forward"></i>Câu hỏi thắc mắc</a>
+                    <a href="<?php echo base_url() . 'admin/central/qa'; ?>"> <i class="menu-icon fa fa-forward"></i>Câu hỏi thắc mắc</a>
                 </li>
                 <li>
-                    <a href="#"> <i class="menu-icon fa fa-forward"></i>Tag tìm kiếm</a>
+                    <a href="<?php echo base_url() . 'admin/central/tag'; ?>"> <i class="menu-icon fa fa-forward"></i>Tag tìm kiếm</a>
                 </li>
 
 

@@ -34,7 +34,7 @@ class Albums_model extends MY_Model
         foreach ($filename as $file) {
             $data_album = array(
                 'album_id' => $insert_id,
-                'img' => $file
+                'img' => 'assets/news/'.$file
             );
             $this->db->insert('albums_gallery', $data_album);
         }

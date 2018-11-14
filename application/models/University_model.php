@@ -16,23 +16,21 @@ class University_model extends MY_Model
         parent::__construct();
     }
 
-    public function insert($name, $url, $img, $description)
+    public function insert($name, $img, $description)
     {
         $data = array(
             'name' => $name,
             'img' => $img,
-            'url' => $url,
             'description' => $description
         );
         $this->db->insert($this->table_name, $data);
     }
 
-    public function update($id, $name, $url, $img, $description)
+    public function update($id, $name, $img, $description)
     {
         $data = array(
             'name' => $name,
             'img' => $img,
-            'url' => $url,
             'description' => $description
         );
         $this->db->where('id', $id);

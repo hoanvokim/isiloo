@@ -26,7 +26,7 @@
                                 <a href="<?php echo base_url() . 'news/' . $item->slug; ?>">
                                     <?php } ?>
                                     <img src="<?php echo base_url() . $item->img; ?>" alt="">
-                                    <h5><?php echo $item->name; ?></h5>
+                                    <h5><?php echo $item->title; ?></h5>
                                 </a>
                                 <div class="content">
                                     <span><?php echo date_format(new DateTime($item->created_date), "d.m.Y"); ?></span>

@@ -56,7 +56,7 @@
                                         </td>
                                         <td><?php echo $item->created_date; ?></td>
                                         <td><?php echo $item->updated_date; ?></td>
-                                        <td><a href="<?php echo base_url() . "albums/album_content/" . $item->slug; ?>"
+                                        <td><a href="<?php echo base_url() . "album/" . $item->slug; ?>"
                                                class="btn btn-success btn-sm"><i
                                                         class="fa fa-eye"></i> Xem hiển thị</a>
                                             <a href="<?php echo base_url() . "admin/album/delete/" . $item->id; ?>"

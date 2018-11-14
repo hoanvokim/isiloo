@@ -2,74 +2,50 @@
 
 /**
  * Created by IntelliJ IDEA.
- * User: hvo
- * Date: 12.11.18
- * Time: 15:40
+ * User: hoanvo
+ * Date: 11/14/18
+ * Time: 10:37 PM
  */
-class Category extends MY_Controller
+class University extends MY_Controller
 {
     public function __construct()
     {
         parent::__construct();
         //Loading model
-        $this->load->model('User_model');
-        $this->load->model('Category_model');
+        $this->load->model('University_model');
     }
 
     public function index()
     {
-        $data['title'] = 'Quản lý Danh mục';
-        $data['categories'] = $this->Category_model->findAllCategories();
-        $this->load->view('admin/category', $data);
-    }
-
-    public function category_empty()
-    {
-        $data['title'] = 'Quản lý Danh mục trống';
-        $data['categories'] = $this->Category_model->findAll();
-        $this->load->view('admin/category_empty', $data);
-    }
-
-    public function sub()
-    {
-        $parent_category = $this->Category_model->findById($this->uri->segment(4));
-        $data['title'] = 'Quản lý Danh mục của: ' . $parent_category->name;
-        $data['categories'] = $this->Category_model->findAllByParentId($parent_category->id);
-        $data['parent_category'] = $parent_category;
-        $this->load->view('admin/category_sub', $data);
+        $data['title'] = 'Quản lý trường đại học';
+        $data['universities'] = $this->University_model->findAllWithNewsInformation();
+        $this->load->view('admin/university', $data);
     }
 
     public function create()
     {
-        $parent_id = $this->uri->segment(4);
-        $data['parent_id'] = $parent_id;
-        $this->load->view('admin/category_create', $data);
+        $this->load->view('admin/university_create');
     }
 
     public function update()
     {
-        $category = $this->Category_model->findById($this->uri->segment(4));
-        $data['title'] = 'Cập nhật Danh mục ' . $category->name;
-        $data['category_id'] = $category->id;
-        $data['title'] = $category->name;
-        $data['slug'] = $category->slug;
-        $data['img_src'] = $category->img;
-        $data['sort_index'] = $category->sort_index;
-        $data['parent_id'] = $this->uri->segment(4);
-        $this->load->view('admin/category_update', $data);
+        $university = $this->University_model->findById($this->uri->segment(4));
+        $data['title'] = 'Cập nhật trường đại học: ' . $university->name;
+        $data['name'] = $university->name;
+        $data['university_id'] = $university->id;
+        $data['img_src'] = $university->img;
+        $data['description'] = $university->description;
+        $this->load->view('admin/university_update', $data);
     }
 
     public function delete()
     {
-        $category = $this->Category_model->findById($this->uri->segment(4));
-        if (!is_null($category->img) && file_exists('./' . $category->img)) {
-            unlink('./' . $category->img);
+        $university = $this->University_model->findById($this->uri->segment(4));
+        if (!is_null($university->img) && file_exists('./' . $university->img)) {
+            unlink('./' . $university->img);
         }
-        $this->Category_model->delete($this->uri->segment(4));
-        if ($category->parent_id != null) {
-            redirect('admin/category/sub/' . $category->parent_id, 'refresh');
-        }
-        redirect('admin/category', 'refresh');
+        $this->University_model->delete($this->uri->segment(4));
+        redirect('admin/university', 'refresh');
     }
 
     public function create_submit()
@@ -78,35 +54,46 @@ class Category extends MY_Controller
             $this->load->library('upload', $this->get_config_base());
             if ($this->upload->do_upload('thumbnail')) {
                 $upload_files = $this->upload->data();
-                $file_path = 'assets/' . $upload_files['file_name'];
+                $file_path = 'assets/news/' . $upload_files['file_name'];
 
                 $this->Category_model->insert(
-                    $this->input->post('parent_id'),
-                    $this->input->post('slug'),
-                    $this->input->post('title'),
+                    $this->input->post('name'),
                     $file_path,
-                    $this->input->post('sort_index')
+                    $this->input->post('description')
                 );
             } else {
                 $this->Category_model->insert(
-                    $this->input->post('parent_id'),
-                    $this->input->post('slug'),
-                    $this->input->post('title'),
+                    $this->input->post('id'),
+                    $this->input->post('name'),
                     null,
-                    $this->input->post('sort_index')
+                    $this->input->post('description')
                 );
             }
-            if ($this->input->post('parent_id') != null) {
-                redirect('admin/category/sub/' . $this->input->post('parent_id'), 'refresh');
-            }
-            redirect('admin/category', 'refresh');
+            redirect('admin/university', 'refresh');
         } else if (isset($_POST["reset"])) {
-            redirect('admin/category_create', 'refresh');
-        } else if (isset($_POST["cancel"])) {
-            if ($this->input->post('parent_id') != null) {
-                redirect('admin/category/sub/' . $this->input->post('parent_id'), 'refresh');
+            redirect('admin/university_create', 'refresh');
+        } else if (isset($_POST["save-write"])) {
+            $this->load->library('upload', $this->get_config_base());
+            if ($this->upload->do_upload('thumbnail')) {
+                $upload_files = $this->upload->data();
+                $file_path = 'assets/news/' . $upload_files['file_name'];
+
+                $this->Category_model->insert(
+                    $this->input->post('name'),
+                    $file_path,
+                    $this->input->post('description')
+                );
+            } else {
+                $this->Category_model->insert(
+                    $this->input->post('id'),
+                    $this->input->post('name'),
+                    null,
+                    $this->input->post('description')
+                );
             }
-            redirect('admin/category', 'refresh');
+            //send id to news content
+        } else if (isset($_POST["cancel"])) {
+            redirect('admin/university', 'refresh');
         }
     }
 
