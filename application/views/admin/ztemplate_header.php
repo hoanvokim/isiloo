@@ -101,7 +101,6 @@
                     <ul class="sub-menu children dropdown-menu show">
                         <li class="active"><i class="fa fa-puzzle-piece"></i><a href="<?php echo base_url() . 'admin/university/create'; ?>">Thêm mới</a></li>
                         <li><i class="fa fa-id-badge"></i><a href="<?php echo base_url() . 'admin/university'; ?>">Tìm và cập nhật</a></li>
-                        <li><i class="fa fa-bars"></i><a href="<?php echo base_url() . 'admin/university/empty'; ?>">Các trường chưa có bài viết</a></li>
                     </ul>
                 </li>
 
@@ -113,7 +112,7 @@
                     <a href="<?php echo base_url() . 'admin/central/employee'; ?>"> <i class="menu-icon fa fa-forward"></i>Nhân viên ISSILOO</a>
                 </li>
                 <li>
-                    <a href="<?php echo base_url() . 'admin/central/student'; ?>"> <i class="menu-icon fa fa-forward"></i>Sinh viên</a>
+                    <a href="<?php echo base_url() . 'admin/student'; ?>"> <i class="menu-icon fa fa-forward"></i>Sinh viên</a>
                 </li>
                 <li>
                     <a href="<?php echo base_url() . 'admin/central/gallery'; ?>"> <i class="menu-icon fa fa-forward"></i>Gallery</a>

@@ -16,21 +16,33 @@ class Student_model extends MY_Model
         parent::__construct();
     }
 
-    public function insert($name, $img)
+    public function insert($name, $img, $img_pop, $status, $review, $star, $prize, $prize_content)
     {
         $data = array(
             'name' => $name,
-            'img' => $img
+            'img' => $img,
+            'img_pop' => $img_pop,
+            'status' => $status,
+            'review' => $review,
+            'star' => $star,
+            'prize' => $prize,
+            'prize_content' => $prize_content
         );
 
         $this->db->insert($this->table_name, $data);
     }
 
-    public function update($id, $name, $img)
+    public function update($id, $name, $img, $img_pop, $status, $review, $star, $prize, $prize_content)
     {
         $data = array(
             'name' => $name,
-            'img' => $img
+            'img' => $img,
+            'img_pop' => $img_pop,
+            'status' => $status,
+            'review' => $review,
+            'star' => $star,
+            'prize' => $prize,
+            'prize_content' => $prize_content
         );
         $this->db->where('id', $id);
         $this->db->update($this->table_name, $data);

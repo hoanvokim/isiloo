@@ -300,7 +300,7 @@ li {
 }
 
 p {
-    color: #726a84;
+    color: #2e4a93;
     font-size: 16px;
     font-weight: 300;
     margin-top: 0;
@@ -2357,6 +2357,15 @@ div.show-shadow:hover img {
     font-weight: 400;
     font-family: "Montserrat", sans-serif;
     color: #6d7f80;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.all-news-area p {
+    padding: 10px 0 10px 10px;
+    font-size: 15px;
+    font-weight: 400;
+    font-family: "Montserrat", sans-serif;
     margin-top: 10px;
     margin-bottom: 10px;
 }

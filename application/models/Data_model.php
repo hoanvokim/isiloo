@@ -16,6 +16,11 @@ class Data_model extends MY_Model
         parent::__construct();
     }
 
+    public function findAll()
+    {
+        return $this->db->get($this->table_name)->result();
+    }
+
     public function insert($keyname, $value)
     {
         $data = array(
@@ -26,13 +31,12 @@ class Data_model extends MY_Model
         $this->db->insert($this->table_name, $data);
     }
 
-    public function update($id, $keyname, $value)
+    public function update ($keyname, $value)
     {
         $data = array(
-            'keyname' => $keyname,
             'value' => $value
         );
-        $this->db->where('id', $id);
+        $this->db->where('keyname', $keyname);
         $this->db->update($this->table_name, $data);
     }
 

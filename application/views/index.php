@@ -235,7 +235,8 @@
     <!-- ***** Hoc Bong Area Start ***** -->
     <section class="scholar_ship_area clearfix section_padding_100_50" id="hocbong">
         <!--        <div>-->
-        <!--            <img class="injectLeftDiv" src="--><?php //echo base_url(); ?><!--webresources/img/issi/hoa-issiloo.png">-->
+        <!--            <img class="injectLeftDiv" src="-->
+        <?php //echo base_url(); ?><!--webresources/img/issi/hoa-issiloo.png">-->
         <!--        </div>-->
         <div class="container">
             <div class="row">
@@ -247,7 +248,8 @@
                             Tổng hợp và cập nhật những thông tin học bổng <br/> trong và ngoài nước dành cho các bạn du học sinh
                         </span>
                         <br/>
-                        <a class="button-view wow flipInY" data-wow-delay="1s" href="<?php echo base_url() . 'news/hoc-bong'; ?>">
+                        <a class="button-view wow flipInY" data-wow-delay="1s"
+                           href="<?php echo base_url() . 'news/hoc-bong'; ?>">
                             Xem thêm →
                         </a>
                     </div>
@@ -255,7 +257,7 @@
                 <div class="col-md-6 col-7 scholar_ship_area-heading text-center wow bounceInRight"
                      data-wow-delay="0.4s">
                     <!-- Heading Text  -->
-                    <img src="<?php echo base_url(); ?>webresources/img/issi/hocvien.png">
+                    <img src="<?php echo base_url(); ?>webresources/img/issi/hocbong.png">
                 </div>
             </div>
         </div>
@@ -281,7 +283,9 @@
                     <!-- App Screenshots Slides  -->
                     <div class="hocvien_slides owl-carousel">
                         <?php foreach ($students as $item) { ?>
-                            <div class="single-shot">
+                            <div class="single-shot student" data-id="<?php echo base_url() . $item->img_pop; ?>"
+                                 data-toggle="modal"
+                                 data-target="#smallmodal">
                                 <img class="hocvien_slides_img" src="<?php echo base_url() . $item->img; ?>" alt="">
                             </div>
                         <?php } ?>
@@ -290,6 +294,23 @@
             </div>
         </div>
     </section>
+
+    <div class="modal fade" id="smallmodal" tabindex="-1" role="dialog" aria-labelledby="smallmodalLabel"
+         aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="smallmodalLabel">Thông tin học viên</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <img class="student-pop-image" src="" style="width: 100%"/>
+                </div>
+            </div>
+        </div>
+    </div>
     <!-- ***** Hocvien Area End *****====== -->
 
     <!-- ***** Thong tin du hoc Area Start ***** -->
@@ -302,7 +323,7 @@
             <div class="row">
                 <div class=" col-6 scholar_ship_area-heading text-center wow bounceInRight" data-wow-delay="0.4s">
                     <!-- Heading Text  -->
-                    <img src="<?php echo base_url(); ?>webresources/img/issi/hocvien.png">
+                    <img src="<?php echo base_url(); ?>webresources/img/issi/duhoc.png">
                 </div>
                 <div class=" col-6 text-center">
                     <!-- Heading Text  -->
@@ -313,7 +334,8 @@
                             du học Hàn Quốc và kinh nghiệm du học Hàn Quốc
                         </span>
                         <br/>
-                        <a class="button-view wow flipInY" data-wow-delay="1s" href="<?php echo base_url() . 'news/thong-tin-du-hoc'; ?>">
+                        <a class="button-view wow flipInY" data-wow-delay="1s"
+                           href="<?php echo base_url() . 'news/thong-tin-du-hoc'; ?>">
                             Xem thêm →
                         </a>
                     </div>
@@ -347,8 +369,7 @@
                                     <?php
                                     if ($item->star == 4.5) {
                                         echo '<i class="ion-ios-star-half"></i>';
-                                    }
-                                    else if ($item->star == 5) {
+                                    } else if ($item->star == 5) {
                                         echo '<i class="ion-ios-star"></i>';
                                     }
                                     ?>
@@ -396,8 +417,10 @@
                     <div class="self_learning_slides owl-carousel">
                         <?php foreach ($self_lessons as $item) { ?>
                             <div class="single-shot show-shadow">
-                                <img src="<?php echo base_url() . $item->img_square; ?>" alt="">
-                                <h5><?php echo $item->title; ?></h5>
+                                <a href="<?php echo base_url() . 'news/news_content/' . $item->slug; ?>">
+                                    <img src="<?php echo base_url() . $item->img_square; ?>" alt="">
+                                    <h5><?php echo $item->title; ?></h5>
+                                </a>
                             </div>
                         <?php } ?>
                     </div>
@@ -431,7 +454,8 @@
                     <div class="issiloo_images_slides owl-carousel wow fadeInRight slow" data-wow-delay="0.4s">
                         <?php foreach ($galleries as $item) { ?>
                             <div class="single-shot">
-                                <img src="<?php echo base_url() . $item->img; ?>" alt="<?php echo base_url() . $item->title; ?>">
+                                <img src="<?php echo base_url() . $item->img; ?>"
+                                     alt="<?php echo base_url() . $item->title; ?>">
                             </div>
                         <?php } ?>
                     </div>

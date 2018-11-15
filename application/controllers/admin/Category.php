@@ -75,10 +75,10 @@ class Category extends MY_Controller
     public function create_submit()
     {
         if (isset($_POST["save"])) {
-            $this->load->library('upload', $this->get_config_base());
+            $this->load->library('upload', $this->get_config());
             if ($this->upload->do_upload('thumbnail')) {
                 $upload_files = $this->upload->data();
-                $file_path = 'assets/' . $upload_files['file_name'];
+                $file_path = 'assets/news/' . $upload_files['file_name'];
 
                 $this->Category_model->insert(
                     $this->input->post('parent_id'),
@@ -113,10 +113,10 @@ class Category extends MY_Controller
     public function update_submit()
     {
         if (isset($_POST["save"])) {
-            $this->load->library('upload', $this->get_config_base());
+            $this->load->library('upload', $this->get_config());
             if ($this->upload->do_upload('thumbnail')) {
                 $upload_files = $this->upload->data();
-                $file_path = 'assets/' . $upload_files['file_name'];
+                $file_path = 'assets/news' . $upload_files['file_name'];
                 $this->Category_model->update(
                     $this->input->post('category_id'),
                     $this->input->post('parent_id'),

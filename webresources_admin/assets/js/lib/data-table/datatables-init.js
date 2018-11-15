@@ -21,7 +21,7 @@
     });
 
     $('#all-album-data-table').DataTable({
-        "order": [[0, "asc"]],
+        "order": [[0, "desc"]],
         stateSave: true,
         "pagingType": "full_numbers",
         lengthMenu: [[10, 30, 50, -1], [10, 30, 50, "Xem tất Cả"]],

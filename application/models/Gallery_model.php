@@ -37,4 +37,16 @@ class Gallery_model extends MY_Model
         $this->db->where('id', $id);
         $this->db->update($this->table_name, $data);
     }
+
+    public function insert_all($filename)
+    {
+        //insert album gallery
+        foreach ($filename as $file) {
+            $data_album = array(
+                'title' => $file,
+                'img' => 'assets/news/' . $file
+            );
+            $this->db->insert('gallery', $data_album);
+        }
+    }
 }

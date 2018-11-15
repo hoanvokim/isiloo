@@ -33,6 +33,7 @@ class Center extends CI_Controller
                 break;
             case "issiloo":
                 $data['active_page'] = 'issiloo';
+                $data['title'] = 'ISSILOO';
                 $data['slug'] = $slug;
                 $data['employee'] = $this->Employee_model->findAllAsc();
                 $data['issiloo_intro'] = $this->Data_model->findByKeyName($this->issiloo_intro)->value;

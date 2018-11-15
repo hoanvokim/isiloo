@@ -15,7 +15,8 @@
                 <a href="<?php echo base_url(); ?>">
                     <img src="<?php echo base_url(); ?>webresources/img/issi/logo-issiloo.png" alt=""/>
                 </a>
-                <a href="tel:<?php echo $this->config->item('hotline'); ?>"><img class="footer-hotline" src="<?php echo base_url(); ?>webresources/img/issi/hotline.png"></a>
+                <a href="tel:<?php echo $this->config->item('hotline'); ?>"><img class="footer-hotline"
+                                                                                 src="<?php echo base_url(); ?>webresources/img/issi/hotline.png"></a>
                 <div class="contact-icon">
                     <a href="<?php echo $this->config->item('facebook_channel'); ?>">
                         <img src="<?php echo base_url(); ?>webresources/img/issi/iconFacebookWhite.png">
@@ -32,10 +33,12 @@
                 <h3>Trung tâm du học Hàn Quốc ISSIOO</h3>
                 <div class="row pad-top-10">
                     <div class="col-6 footer-text-no-padding-right">
-                        <span style="font-weight: 500;">Mail: </span> <a href="mailto:<?php echo $this->config->item('contact_email'); ?>"><span><?php echo $this->config->item('contact_email'); ?></span></a>
+                        <span style="font-weight: 500;">Mail: </span> <a
+                                href="mailto:<?php echo $this->config->item('contact_email'); ?>"><span><?php echo $this->config->item('contact_email'); ?></span></a>
                     </div>
                     <div class="col-6 footer-text-no-padding-left">
-                        <span style="font-weight: 500;">Fb: </span> <a href="<?php echo $this->config->item('facebook_channel'); ?>"><span>Du học Hàn Quốc ISSILOO</span></a>
+                        <span style="font-weight: 500;">Fb: </span> <a
+                                href="<?php echo $this->config->item('facebook_channel'); ?>"><span>Du học Hàn Quốc ISSILOO</span></a>
                     </div>
                 </div>
             </div>
@@ -78,5 +81,14 @@
 <script src="<?php echo base_url(); ?>webresources/js/active.js"></script>
 <!-- Custom JS -->
 <script src="<?php echo base_url(); ?>webresources/js/custom.js"></script>
+
+
+<script>
+    $(".single-shot.student").click(function () {
+        var img_src = $(this).data('id');
+        $(".student-pop-image").attr("src", img_src);
+    });
+
+</script>
 </body>
 </html>

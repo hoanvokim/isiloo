@@ -100,3 +100,20 @@ $route['admin/university/update/:num'] = 'admin/university/update';
 $route['admin/university/delete/:num'] = 'admin/university/delete';
 $route['admin-university-create-form'] = 'admin/university/create_submit';
 $route['admin-university-update-form'] = 'admin/university/update_submit';
+
+$route['admin/student'] = 'admin/student';
+$route['admin/student/create'] = 'admin/student/create';
+$route['admin/student/update/:num'] = 'admin/student/update';
+$route['admin/student/delete/:num'] = 'admin/student/delete';
+$route['admin-student-create-form'] = 'admin/student/create_submit';
+$route['admin-student-update-form'] = 'admin/student/update_submit';
+
+
+$route['admin/central/(:any)'] = 'admin/central/dispatcher/$1';
+$route['admin-tag-create-form'] = 'admin/central/tag_create';
+$route['admin/central/tag_delete/:num'] = 'admin/central/tag_delete';
+$route['admin-subject-create-form'] = 'admin/central/subject_create';
+$route['admin/central/subject_delete/:num'] = 'admin/central/subject_delete';
+$route['admin-datainfo-create-form'] = 'admin/central/updateDataInfo';
+$route['admin-gallery-create-form'] = 'admin/central/gallery_create';
+$route['admin/central/gallery_delete/:num'] = 'admin/central/gallery_delete';
