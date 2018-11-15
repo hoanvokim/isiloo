@@ -79,7 +79,7 @@
                 </div>
 
                 <div class="row form-group">
-                    <div class="col col-md-3"><label for="text-status" class=" form-control-label">Trạng thái</label></div>
+                    <div class="col col-md-3"><label for="text-status" class=" form-control-label">Đang học tại</label></div>
                     <div class="col-12 col-md-9"><input type="text" id="text-status" name="status" placeholder="Trạng thái"
                                                         class="form-control" value="<?php echo $status; ?>">
                         <small class="form-text text-muted">This is a help text</small>
@@ -94,9 +94,9 @@
                     </div>
                 </div><div class="row form-group">
                     <div class="col col-md-3"><label for="text-star" class=" form-control-label">Thành tích</label></div>
-                    <div class="col-12 col-md-9"><input type="text" id="text-star" name="star"
+                    <div class="col-12 col-md-9"><input type="text" id="text-star" name="prize"
                                                         placeholder="Trạng thái"
-                                                        class="form-control" value="<?php echo $star; ?>">
+                                                        class="form-control" value="<?php echo $prize; ?>">
                         <small class="form-text text-muted">This is a help text</small>
                     </div>
                 </div>
@@ -106,7 +106,7 @@
                     </div>
                     <div class="col-12 col-md-9">
                         <textarea id="text-summary" name="summaryeditor" class="form-control" style="min-height: 150px;"
-                                  placeholder="Nhập nội dung rút gọn..."><?php echo $summary; ?></textarea>
+                                  placeholder="Nhập nội dung rút gọn..."><?php echo $review; ?></textarea>
                         <small class="form-text text-muted">This is a help text</small>
                     </div>
                 </div>
@@ -115,7 +115,7 @@
                     </div>
                     <div class="col-12 col-md-9">
                         <textarea id="text-content" name="contenteditor" class="form-control" style="min-height: 400px;"
-                                  placeholder="Nhập nội dung..."><?php echo $content; ?></textarea>
+                                  placeholder="Nhập nội dung..."><?php echo $prize_content; ?></textarea>
                         <small class="form-text text-muted">This is a help text</small>
                     </div>
                 </div>
