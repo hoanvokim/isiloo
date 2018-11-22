@@ -24,6 +24,7 @@ class Student extends MY_Controller
 
     public function create()
     {
+        $data['title'] = 'Thêm học viên mới';
         $this->load->view('admin/student_create');
     }
 
@@ -76,10 +77,10 @@ class Student extends MY_Controller
                 $file_path,
                 $file_path_pop,
                 $this->input->post('status'),
-                $this->input->post('review'),
+                $this->input->post('summaryeditor'),
                 $this->input->post('star'),
                 $this->input->post('prize'),
-                $this->input->post('prize_content')
+                $this->input->post('contenteditor')
             );
             redirect('admin/student', 'refresh');
         } else if (isset($_POST["reset"])) {
@@ -110,32 +111,43 @@ class Student extends MY_Controller
                 $file_path,
                 $file_path_pop,
                 $this->input->post('status'),
-                $this->input->post('review'),
+                $this->input->post('summaryeditor'),
                 $this->input->post('star'),
                 $this->input->post('prize'),
-                $this->input->post('prize_content')
+                $this->input->post('contenteditor')
             );
 
             $student = $this->Student_model->findById($this->input->post('student_id'));
             $data['name'] = $student->name;
             $data['student_id'] = $student->id;
-            $data['img'] = $student->img;
-            $data['img_pop'] = $student->img_pop;
+            $data['img_src'] = $student->img;
+            $data['img_src_pop'] = $student->img_pop;
             $data['status'] = $student->status;
             $data['review'] = $student->review;
             $data['star'] = $student->star;
             $data['prize'] = $student->prize;
             $data['prize_content'] = $student->prize_content;
             $data['showmessages'] = 'Cập nhật thành công!';
+            $data['title'] = 'Cập nhật trường thông tin học viên: ' . $student->name;
             $this->load->view('admin/student_update', $data);
-        }
-        else if (isset($_POST["delete"])) {
+        } else if (isset($_POST["delete"])) {
             $this->delete();
-        }
-        else if (isset($_POST["cancel"])) {
+        } else if (isset($_POST["cancel"])) {
             redirect('admin/student', 'refresh');
-        }
-        else if (isset($_POST["remove-current"])) {
+        } else if (isset($_POST["reset"])) {
+            $student = $this->Student_model->findById($this->input->post('student_id'));
+            $data['title'] = 'Cập nhật trường thông tin học viên: ' . $student->name;
+            $data['name'] = $student->name;
+            $data['student_id'] = $student->id;
+            $data['img_src'] = $student->img;
+            $data['img_src_pop'] = $student->img_pop;
+            $data['status'] = $student->status;
+            $data['review'] = $student->review;
+            $data['star'] = $student->star;
+            $data['prize'] = $student->prize;
+            $data['prize_content'] = $student->prize_content;
+            $this->load->view('admin/student_update', $data);
+        } else if (isset($_POST["remove-current"])) {
             $this->Student_model->updateImage($this->input->post('student_id'));
             if ((strpos($this->input->post('img_src'), 'youtube') == false) && file_exists('./' . $this->input->post('img_src'))) {
                 unlink('./' . $this->input->post('img_src'));
@@ -152,9 +164,9 @@ class Student extends MY_Controller
             $data['prize'] = $student->prize;
             $data['prize_content'] = $student->prize_content;
             $data['showmessages'] = 'Xóa ảnh thành công!';
+            $data['title'] = 'Cập nhật trường thông tin học viên: ' . $student->name;
             $this->load->view('admin/student_update', $data);
-        }
-        else if (isset($_POST["remove-current-pop"])) {
+        } else if (isset($_POST["remove-current-pop"])) {
             $this->Student_model->updateImage($this->input->post('student_id'));
             if ((strpos($this->input->post('img_src_pop'), 'youtube') == false) && file_exists('./' . $this->input->post('img_src_pop'))) {
                 unlink('./' . $this->input->post('img_src_pop'));

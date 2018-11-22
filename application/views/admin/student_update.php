@@ -16,13 +16,13 @@
         <div class="col-12">
             <div class="page-header float-left">
                 <div class="page-title">
-                    <h1>Thêm bài viết mới</h1>
+                    <h1>Cập nhật</h1>
                 </div>
             </div>
         </div>
     </div>
 
-    <?php echo form_open_multipart('admin-category-update-form'); ?>
+    <?php echo form_open_multipart('admin-student-update-form'); ?>
     <input type="hidden" id="hide" name="student_id" value="<?php echo $student_id; ?>">
 
     <div class="col-12">
@@ -45,7 +45,7 @@
                     <div class="col-12 col-md-9">
                         <?php if (!empty($img_src)) { ?>
                             <input type="hidden" id="hide" name="img_src" value="<?php echo $img_src; ?>">
-                            <img src="<?php echo base_url() . $img_src; ?> " width="600px;"/>
+                            <img src="<?php echo base_url() . $img_src; ?> " width="300px;"/>
                             <br/>
                             <br/>
                             <button type="submit" class="btn btn-danger btn-xs" name="remove-current"><i
@@ -64,7 +64,7 @@
                     <div class="col-12 col-md-9">
                         <?php if (!empty($img_src_pop)) { ?>
                             <input type="hidden" id="hide" name="img_src_pop" value="<?php echo $img_src_pop; ?>">
-                            <img src="<?php echo base_url() . $img_src_pop; ?> " width="600px;"/>
+                            <img src="<?php echo base_url() . $img_src_pop; ?> " width="400px;"/>
                             <br/>
                             <br/>
                             <button type="submit" class="btn btn-danger btn-xs" name="remove-current-pop"><i

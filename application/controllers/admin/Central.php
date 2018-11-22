@@ -51,7 +51,6 @@ class Central extends MY_Controller
                 $data['items'] = $this->Data_model->findAll();
                 $this->load->view('admin/student', $data);
                 break;
-
             default:
                 $this->load->view('404');
         }

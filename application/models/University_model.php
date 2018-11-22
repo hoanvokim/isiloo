@@ -39,7 +39,7 @@ class University_model extends MY_Model
 
     public function findAllWithNewsInformation()
     {
-        $sql = "select *, news.slug as news_slug from $this->table_name join news on news.id = $this->table_name.news_id";
+        $sql = "select $this->table_name.*, news.slug as news_slug from $this->table_name join news on news.id = $this->table_name.news_id";
         return $this->db->query($sql)->result();
     }
 }

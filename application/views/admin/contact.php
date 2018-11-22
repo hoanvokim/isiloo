@@ -19,7 +19,7 @@
         <div class="col-12">
             <div class="page-header float-left">
                 <div class="page-title">
-                    <h1>Quản lý: Nhân viên ISSILOO</h1>
+                    <h1>Quản lý: Danh sách các học sinh đã đăng ký</h1>
                 </div>
             </div>
         </div>
@@ -27,43 +27,44 @@
     <div class="content mt-3">
         <div class="animated fadeIn">
             <div class="row">
-
                 <div class="col-md-12">
                     <div class="card">
-                        <div class="card-header">
-                            <strong class="card-title">Data Table</strong>
-                            <a href="<?php echo base_url() . "admin/employee/create/" ?>"
-                               class="btn btn-primary btn-sm pull-right"
-                            ><i class="fa fa-plus"></i> Thêm nhân viên</a>
-                        </div>
                         <div class="card-body">
-                            <table id="all-category-data-table" class="table table-striped table-bordered">
+                            <table id="all-album-data-table" class="table table-striped table-bordered">
                                 <thead>
                                 <tr>
                                     <th>Id</th>
                                     <th>Tên</th>
-                                    <th>Vị trí</th>
+                                    <th>SĐT</th>
+                                    <th>Câu hỏi</th>
+                                    <th>Nội dung</th>
+                                    <th>Trạng thái</th>
                                     <th>Ngày tạo</th>
                                     <th>Ngày cập nhật</th>
                                     <th></th>
                                 </tr>
                                 </thead>
                                 <tbody>
-                                <?php foreach ($employee as $item) { ?>
-                                    <tr>
-                                        <td><?php echo $item->id; ?></td>
-                                        <td>
-                                            <a href="<?php echo base_url() . "admin/employee/update/" . $item->id; ?>"> <?php echo $item->name; ?> </a>
-                                        </td>
-                                        <td><?php echo $item->position; ?></td>
-                                        <td><?php echo $item->created_date; ?></td>
-                                        <td><?php echo $item->updated_date; ?></td>
-                                        <td>
-                                            <a href="<?php echo base_url() . "admin/employee/delete/" . $item->id; ?>"
-                                               class="btn btn-danger btn-sm"
-                                               onclick="return confirm('Bạn có muốn xoá không?');"><i
-                                                    class="fa fa-close"></i> Xoá</a></td>
-                                    </tr>
+                                <?php foreach ($contacts as $item) { ?>
+                                <tr>
+                                    <td><?php echo $item->id; ?></td>
+                                    <td><?php echo $item->name; ?></td>
+                                    <td><a href="callto:<?php echo $item->phone; ?>"> <?php echo $item->phone; ?> </a>
+                                    </td>
+                                    <td><?php echo $item->subject_question; ?></td>
+                                    <td><?php echo $item->content; ?></td>
+                                    <td><?php if ($item->status == 0) echo 'Chưa liên lạc'; else echo 'Đã liên lạc'; ?></td>
+                                    <td><?php echo $item->created_date; ?></td>
+                                    <td><?php echo $item->updated_date; ?></td>
+                                    <td><?php if ($item->status == 0) {?>
+                                        <a href="<?php echo base_url() . "admin/contact/update/" . $item->id; ?>"
+                                           class="btn btn-danger btn-sm"><i
+                                                    class="fa fa-close"></i> Đã Liên Lạc</a></td>
+                                    <?php }  else {?>
+                                        <a  class="btn btn-success btn-sm"><i
+                                                    class="fa fa-check"></i></a></td>
+                                    <?php }  ?>
+                                </tr>
                                 <?php } ?>
                                 </tbody>
                             </table>

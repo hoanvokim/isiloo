@@ -62,7 +62,7 @@
                                 class="menu-icon fa fa-dashboard"></i>Dashboard</a>
                 </li>
                 <li>
-                    <a href=#"> <i class="menu-icon fa fa-phone"></i>Liên hệ</a>
+                    <a href="<?php echo base_url() . 'admin/contact'; ?>"> <i class="menu-icon fa fa-phone"></i>Liên hệ</a>
                 </li>
                 <h3 class="menu-title">Quản lý nội dung</h3><!-- /.menu-title -->
                 <li class="menu-item-has-children dropdown show">
@@ -109,7 +109,7 @@
                     <a href="<?php echo base_url() . 'admin/central/data_info'; ?>"> <i class="menu-icon fa fa-forward"></i>Thông tin trên website</a>
                 </li>
                 <li>
-                    <a href="<?php echo base_url() . 'admin/central/employee'; ?>"> <i class="menu-icon fa fa-forward"></i>Nhân viên ISSILOO</a>
+                    <a href="<?php echo base_url() . 'admin/employee'; ?>"> <i class="menu-icon fa fa-forward"></i>Nhân viên ISSILOO</a>
                 </li>
                 <li>
                     <a href="<?php echo base_url() . 'admin/student'; ?>"> <i class="menu-icon fa fa-forward"></i>Sinh viên</a>

@@ -57,6 +57,15 @@
                     </div>
                 </div>
 
+                <div class="row form-group">
+                    <div class="col col-md-3"><label for="text-img-content" class=" form-control-label">Hình ảnh nội dung</label></div>
+                    <div class="col-12 col-md-9">
+                        <input type='file' name='thumbnails[]' multiple id="text-img-content" size='20'/>
+                        <br/>
+                        <i>Lưu ý: Hình ảnh size chuẩn: 800 * 600px - Up nhiều ảnh</i>
+                    </div>
+                </div>
+
 
                 <div class="card-title">
                     <h3>Cấu hình SEO</h3>

@@ -16,7 +16,7 @@
         <div class="col-12">
             <div class="page-header float-left">
                 <div class="page-title">
-                    <h1>Thêm bài viết mới</h1>
+                    <h1>Cập nhật</h1>
                 </div>
             </div>
         </div>

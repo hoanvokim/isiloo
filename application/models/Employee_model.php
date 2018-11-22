@@ -16,21 +16,27 @@ class Employee_model extends MY_Model
         parent::__construct();
     }
 
-    public function insert($name, $img)
+    public function insert($name, $img, $position, $education, $intro)
     {
         $data = array(
             'name' => $name,
-            'img' => $img
+            'img' => $img,
+            'position' => $position,
+            'education' => $education,
+            'intro' => $intro
         );
 
         $this->db->insert($this->table_name, $data);
     }
 
-    public function update($id, $name, $img)
+    public function update($id, $name, $img, $position, $education, $intro)
     {
         $data = array(
             'name' => $name,
-            'img' => $img
+            'img' => $img,
+            'position' => $position,
+            'education' => $education,
+            'intro' => $intro
         );
         $this->db->where('id', $id);
         $this->db->update($this->table_name, $data);
