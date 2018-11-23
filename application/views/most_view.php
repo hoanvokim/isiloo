@@ -36,10 +36,11 @@
                     <div class="news-border wow fadeInBig" data-wow-delay="0.2s">
                         <a href="<?php echo base_url() . 'news/news_content/' . $item->news_slug; ?>">
                             <img src="<?php echo base_url() . $item->img_square; ?>" alt="">
-                            <h5><?php echo $this->utilities->limit_text($item->title, 10); ?></h5>
+                            <h5><?php echo $this->utilities->limit_text($item->title, 13); ?></h5>
+                            <span class="padding-left-right"><?php echo $this->utilities->limit_text($item->summary, 25); ?></span>
                         </a>
                         <div class="content">
-                            <span class="content-date"><?php echo date_format(new DateTime($item->created_date), "d.m.Y"); ?></span>
+                            <span class="content-date padding-left-right"><?php echo date_format(new DateTime($item->created_date), "d.m.Y"); ?></span>
                         </div>
                     </div>
                 </div>

@@ -60,9 +60,8 @@
                         </div>
                         <h5><?php echo $item->name; ?></h5>
                         <div class="content">
-                            <span><?php echo $item->position; ?></span>
-                            <br/>
-                            <span><?php echo $item->education; ?></span>
+                            <span class="padding-left-right"><?php echo $item->position; ?></span>
+                            <span class="padding-left-right"><?php echo $item->education; ?></span>
                             <p>
                                 <i class="fa fa-quote-left" aria-hidden="true"></i> <br/>
                                 <?php echo $item->intro; ?>

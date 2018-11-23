@@ -83,7 +83,7 @@
                                             <img src="<?php echo base_url() . $item->img_square; ?>" alt="">
                                         </div>
                                         <div class="col-md-6 col-12 sub-category-label">
-                                            <span><?php echo $item->title; ?></span>
+                                            <span><?php echo $this->utilities->limit_text($item->title, 12); ?></span>
                                         </div>
                                     </div>
                                 <?php } ?>
