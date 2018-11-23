@@ -373,7 +373,7 @@
                             <div class="single-shot show-shadow">
                                 <a href="<?php echo base_url() . 'news/' . $item->slug; ?>">
                                     <img src="<?php echo base_url() . $item->img; ?>" alt="">
-                                    <h5><?php echo $item->name; ?></h5>
+                                    <h5 class="text-bold"><?php echo $item->name; ?></h5>
                                 </a>
                             </div>
                         <?php } ?>

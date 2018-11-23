@@ -3041,3 +3041,8 @@ div.show-shadow:hover img {
 article {
     color: #2e4a93 !important;
 }
+
+.text-bold {
+    font-weight: 700 !important;
+    font-size: 20px;
+}

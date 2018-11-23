@@ -27,8 +27,17 @@
                                 <a href="<?php echo base_url() . 'news/' . $item->slug; ?>">
                                     <?php } ?>
                                     <img src="<?php echo base_url() . $item->img; ?>" alt="">
-                                    <h5><?php echo $item->name; ?></h5>
-                                    <p><?php echo $this->utilities->limit_text($item->summary, 26); ?></p>
+                                    <h5><?php if ($isAlbums) {
+                                            echo $item->title;
+                                        } else {
+                                            echo $item->name;
+                                        } ?></h5>
+                                    <span class="padding-left-right">
+                                        <?php if ($isAlbums) {
+                                            echo $this->utilities->limit_text($item->content, 26);
+                                        } else {
+                                            echo $this->utilities->limit_text($item->summary, 26);
+                                        } ?></span>
                                 </a>
                                 <div class="content">
                                     <span><?php echo date_format(new DateTime($item->created_date), "d.m.Y"); ?></span>

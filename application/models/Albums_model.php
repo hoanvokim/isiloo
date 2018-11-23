@@ -34,7 +34,7 @@ class Albums_model extends MY_Model
         foreach ($filename as $file) {
             $data_album = array(
                 'album_id' => $insert_id,
-                'img' => 'assets/news/'.$file
+                'img' => 'assets/news/' . $file
             );
             $this->db->insert('albums_gallery', $data_album);
         }
@@ -53,13 +53,26 @@ class Albums_model extends MY_Model
         );
         $this->db->where('id', $id);
         $this->db->update($this->table_name, $data);
-        //update album gallery
+
+        foreach ($filename as $file) {
+            $data_album = array(
+                'album_id' => $id,
+                'img' => 'assets/news/' . $file
+            );
+            $this->db->insert('albums_gallery', $data_album);
+        }
     }
 
     public function findAllImages($albumId)
     {
-        $sql = "SELECT ag.img from $this->table_name a join albums_gallery ag on ag.album_id = a.id where a.id = $albumId";
+        $sql = "SELECT ag.id,ag.img from $this->table_name a join albums_gallery ag on ag.album_id = a.id where a.id = $albumId";
         return $this->db->query($sql)->result();
+    }
+
+    public function fileImageById($id)
+    {
+        $sql = "SELECT ag.id,ag.img from albums_gallery ag where ag.id = $id";
+        return $this->db->query($sql)->row();
     }
 
     public function delete($album_id)
@@ -68,5 +81,11 @@ class Albums_model extends MY_Model
         $this->db->delete('albums_gallery');
         $this->db->where('id', $album_id);
         $this->db->delete($this->table_name);
+    }
+
+    public function deleteImagesById($id)
+    {
+        $this->db->where('id', $id);
+        $this->db->delete('albums_gallery');
     }
 }

@@ -32,7 +32,7 @@
 
     <?php echo form_open_multipart('admin-album-update-form'); ?>
 
-    <input type="hidden" id="hide" name="newsId" value="<?php echo $albumId; ?>">
+    <input type="hidden" id="hide" name="albumId" value="<?php echo $albumId; ?>">
 
     <div class="col-12">
         <div class="card">
@@ -121,6 +121,25 @@
                     <h3>Nội dung</h3>
                 </div>
                 <hr>
+                <div class="row form-group">
+                    <div class="col col-md-3"><label for="text-img" class=" form-control-label">Hình ảnh trong bài
+                            viết</label></div>
+                    <div class="col-12 col-md-9">
+                        <?php foreach ($images as $item) { ?>
+                            <img src="<?php echo base_url() . $item->img; ?> " width="200px;"/>
+                            <a href="<?php echo base_url() . 'admin/albums/remove_image/' . $albumId . '/' . $item->id; ?>"
+                               class="btn btn-danger btn-xs" name="remove-current"><i
+                                        class="fa fa-close"></i> Xoá
+                            </a>
+                        <?php } ?>
+                        <br/>
+                        <span>Thêm hình ảnh</span>
+                        <input type='file' name='files[]' multiple id="text-img-content" size='20'/>
+                        <br/>
+                        <i>Lưu ý: Hình ảnh size chuẩn: 800 * 600px </i>
+                    </div>
+                </div>
+
                 <div class="row form-group">
                     <div class="col col-md-3"><label for="text-content" class=" form-control-label">Nội dung</label>
                     </div>

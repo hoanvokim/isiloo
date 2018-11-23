@@ -35,13 +35,36 @@ class Albums extends MY_Controller
         $data['title'] = 'Cập nhật hoạt động';
         $album = $this->Albums_model->findById($this->uri->segment(4));
         $data['albumId'] = $album->id;
-        $data['img'] = $album->img;
+        $data['img_src'] = $album->img;
         $data['slug'] = $album->slug;
         $data['title_header'] = $album->title_header;
         $data['description_header'] = $album->description_header;
         $data['keyword_header'] = $album->keyword_header;
         $data['title'] = $album->title;
         $data['content'] = $album->content;
+        $data['images'] = $this->Albums_model->findAllImages($this->uri->segment(4));
+        $this->load->view('admin/album_update', $data);
+    }
+
+    public function remove_images()
+    {
+        $images = $this->Albums_model->fileImageById($this->uri->segment(5));
+        $this->Albums_model->deleteImagesById($this->uri->segment(5));
+        if (file_exists('./' . $images->img)) {
+            unlink('./' . $images->img);
+        }
+
+        $data['title'] = 'Cập nhật hoạt động';
+        $album = $this->Albums_model->findById($this->uri->segment(4));
+        $data['albumId'] = $album->id;
+        $data['img_src'] = $album->img;
+        $data['slug'] = $album->slug;
+        $data['title_header'] = $album->title_header;
+        $data['description_header'] = $album->description_header;
+        $data['keyword_header'] = $album->keyword_header;
+        $data['title'] = $album->title;
+        $data['content'] = $album->content;
+        $data['images'] = $this->Albums_model->findAllImages($this->uri->segment(4));
         $this->load->view('admin/album_update', $data);
     }
 
@@ -132,76 +155,51 @@ class Albums extends MY_Controller
                 $upload_files = $this->upload->data();
                 $file_path = 'assets/news/' . $upload_files['file_name'];
             }
-            if ($this->upload->do_upload('thumbnail')) {
-                $upload_files = $this->upload->data();
-                $file_path = 'assets/news/' . $upload_files['file_name'];
-                $this->News_model->update(
-                    $this->input->post('newsId'),
-                    $this->input->post('category'),
-                    $file_path,
-                    $file_path,
-                    $this->input->post('slug'),
-                    $this->input->post('title'),
-                    $this->input->post('summaryeditor'),
-                    $this->input->post('contenteditor'),
-                    $this->input->post('title_header'),
-                    $this->input->post('description_header'),
-                    $this->input->post('keyword_header')
-                );
-            } else {
-                $this->News_model->update(
-                    $this->input->post('newsId'),
-                    $this->input->post('category'),
-                    $this->input->post('img_src'),
-                    $this->input->post('img_src'),
-                    $this->input->post('slug'),
-                    $this->input->post('title'),
-                    $this->input->post('summaryeditor'),
-                    $this->input->post('contenteditor'),
-                    $this->input->post('title_header'),
-                    $this->input->post('description_header'),
-                    $this->input->post('keyword_header')
-                );
-            }
+            $this->Albums_model->update(
+                $this->input->post('albumId'),
+                $this->input->post('slug'),
+                $file_path,
+                $this->input->post('title'),
+                $this->input->post('contenteditor'),
+                $this->input->post('title_header'),
+                $this->input->post('description_header'),
+                $this->input->post('keyword_header'),
+                $_FILES['files']['name']
+            );
 
-
-            $news = $this->News_model->findById($this->input->post('newsId'));
-            $data['newsId'] = $this->input->post('newsId');
-            $data['catId'] = $this->input->post('category');
-            $data['img_src'] = $news->img_square;
-            $data['slug'] = $this->input->post('slug');
-            $data['title_header'] = $this->input->post('title_header');
-            $data['description_header'] = $this->input->post('description_header');
-            $data['keyword_header'] = $this->input->post('keyword_header');
-            $data['title'] = $this->input->post('title');
-            $data['content'] = $this->input->post('contenteditor');
-            $data['summary'] = $this->input->post('summaryeditor');
-            $data['categories'] = $this->Category_model->findAll();
+            $album = $this->Albums_model->findById($this->input->post('albumId'));
+            $data['albumId'] = $album->id;
+            $data['img_src'] = $album->img;
+            $data['slug'] = $album->slug;
+            $data['title_header'] = $album->title_header;
+            $data['description_header'] = $album->description_header;
+            $data['keyword_header'] = $album->keyword_header;
+            $data['title'] = $album->title;
+            $data['content'] = $album->content;
+            $data['images'] = $this->Albums_model->findAllImages($this->input->post('albumId'));
             $data['showmessages'] = 'Cập nhật thành công!';
-            $this->load->view('admin/news_update', $data);
-
+            $this->load->view('admin/album_update', $data);
         } else if (isset($_POST["delete"])) {
             $this->delete();
         } else if (isset($_POST["cancel"])) {
-            redirect('admin/news', 'refresh');
+            redirect('admin/album', 'refresh');
         } else if (isset($_POST["remove-current"])) {
-            $this->News_model->updateImage($this->input->post('newsId'));
+            $this->Albums_model->updateImage($this->input->post('albumId'));
             if ((strpos($this->input->post('img_src'), 'youtube') == false) && file_exists('./' . $this->input->post('img_src'))) {
                 unlink('./' . $this->input->post('img_src'));
             }
-            $data['newsId'] = $this->input->post('newsId');
-            $data['catId'] = $this->input->post('category');
-            $data['img_src'] = '';
-            $data['slug'] = $this->input->post('slug');
-            $data['title_header'] = $this->input->post('title_header');
-            $data['description_header'] = $this->input->post('description_header');
-            $data['keyword_header'] = $this->input->post('keyword_header');
-            $data['title'] = $this->input->post('title');
-            $data['content'] = $this->input->post('contenteditor');
-            $data['summary'] = $this->input->post('summaryeditor');
-            $data['categories'] = $this->Category_model->findAll();
+            $album = $this->Albums_model->findById($this->input->post('albumId'));
+            $data['albumId'] = $album->id;
+            $data['img_src'] = $album->img;
+            $data['slug'] = $album->slug;
+            $data['title_header'] = $album->title_header;
+            $data['description_header'] = $album->description_header;
+            $data['keyword_header'] = $album->keyword_header;
+            $data['title'] = $album->title;
+            $data['content'] = $album->content;
+            $data['images'] = $this->Albums_model->findAllImages($this->input->post('albumId'));
             $data['showmessages'] = 'Xóa ảnh thành công!';
-            $this->load->view('admin/news_update', $data);
+            $this->load->view('admin/album_update', $data);
         }
     }
 }

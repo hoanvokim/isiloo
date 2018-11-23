@@ -92,6 +92,7 @@ $route['admin/album'] = 'admin/albums';
 $route['admin/album/create'] = 'admin/albums/create';
 $route['admin/album/update/:num'] = 'admin/albums/update';
 $route['admin/album/delete/:num'] = 'admin/albums/delete';
+$route['admin/albums/remove_image/:num/:num'] = 'admin/albums/remove_images';
 $route['admin-album-create-form'] = 'admin/albums/create_submit';
 $route['admin-album-update-form'] = 'admin/albums/update_submit';
 
