@@ -9,21 +9,14 @@ defined('BASEPATH') OR exit('No direct script access allowed');
  */
 class Utilities
 {
-    public function loadPropertiesFiles($lang)
+    function limit_text($text, $limit)
     {
-        if (empty($_SESSION["activeLanguage"])) {
-            $_SESSION["activeLanguage"] = "en";
+        if (str_word_count($text, 0) > $limit) {
+            $words = str_word_count($text, 2);
+            $pos = array_keys($words);
+            $text = substr($text, 0, $pos[$limit]) . '...';
         }
-        if (strcasecmp($_SESSION["activeLanguage"], "vi") == 0) {
-            $lang->load('message', 'vietnamese');
-        }
-        else {
-            $lang->load('message', 'english');
-        }
+        return $text;
     }
 
-    function IsNullOrEmptyString($question)
-    {
-        return (!isset($question) || trim($question) === '');
-    }
 }

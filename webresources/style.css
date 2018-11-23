@@ -348,6 +348,10 @@ p {
     z-index: 2;
 }
 
+table {
+    color: #223d77;
+}
+
 .table-cell {
     display: table-cell;
     vertical-align: middle;
@@ -876,12 +880,12 @@ p {
     background: -o-linear-gradient(left, #2e4a93, #688dcf);
     background: linear-gradient(to right, #2e4a93, #688dcf);
     padding: 50px 0 50px 0;
-    height: 530px;
+    height: 485px;
 }
 
 .scholar_ship_area-heading {
     margin: auto;
-    margin-top: -50px;
+    margin-top: -95px;
 }
 
 .scholar_ship_area-heading span {
@@ -889,7 +893,7 @@ p {
 }
 
 .with-text-padding {
-    padding: 120px 0;
+    padding: 180px 0;
 }
 
 .button-view {
@@ -898,7 +902,7 @@ p {
     height: 45px;
     width: 167px;
     line-height: 46px;
-    text-align: center;
+    text-align: center !important;
     margin-top: 20px;
     background-color: #f01f33;
     color: #fff !important;
@@ -1155,7 +1159,7 @@ p {
     max-width: 1010px;
     margin: auto;
     margin-bottom: 15px;
-    font-size: 22px;
+    font-size: 24px;
 }
 
 .clients-feedback-area .client > i {
@@ -1209,22 +1213,17 @@ p {
     -webkit-box-align: center;
     -ms-flex-align: center;
     align-items: center;
-    height: 129px;
+    height: 130px;
+    margin-bottom: 20px;
 }
 
 .clients-feedback-area .slick-slide img {
     display: block;
-    width: 80px !important;
-    height: 80px !important;
-    border-radius: 50%;
-    border: 5px solid #fff;
-    -webkit-box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
-    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
 }
 
 .clients-feedback-area .slick-slide.slick-current img {
-    width: 100px !important;
-    height: 100px !important;
+    width: 200px !important;
+    height: 200px !important;
 }
 
 .clients-feedback-area .slick-arrow {
@@ -2344,7 +2343,7 @@ div.show-shadow:hover img {
 }
 
 .all-news-area h5 {
-    padding: 10px 0 10px 10px;
+    padding: 10px 0 0px 10px;
     font-size: 22px;
     font-weight: bold;
     font-family: "Montserrat", sans-serif;
@@ -2579,7 +2578,7 @@ div.show-shadow:hover img {
 
 .popular_news_area a,
 .popular_news_area span {
-    color: #3b3b3b91 !important;
+    color: #3b3b3b91;
     font-size: 15px;
     text-align: left;
 }
@@ -2623,7 +2622,8 @@ div.show-shadow:hover img {
 
 .popular_news_area-content h3 {
     padding: 15px 0;
-    font-weight: 600;
+    font-weight: 800;
+    font-family: "Montserrat", sans-serif;
 }
 
 .popular_news_area-text-content {
@@ -2664,7 +2664,7 @@ div.show-shadow:hover img {
 
 .chuongtrinhissiloo_slides h5 {
     font-family: "Montserrat", sans-serif;
-    font-size: 26pt;
+    font-size: 21pt;
     color: #2e4a93;
     font-weight: bold;
     padding-left: 10px;
@@ -2677,6 +2677,8 @@ div.show-shadow:hover img {
 
 .chuongtrinhissiloo_slides a > span {
     color: #000;
+    font-size: 17px;
+    font-weight: 700;
 }
 
 .chuongtrinhissiloo_slides .single-shot {

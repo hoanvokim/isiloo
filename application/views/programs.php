@@ -5,6 +5,7 @@
  * Date: 22.08.18
  * Time: 16:44
  */
+
 ?>
 <?php $this->load->view('webapp/tpl_header'); ?>
     <section class="all-news-area clearfix section_padding_100_70">
@@ -27,6 +28,7 @@
                                     <?php } ?>
                                     <img src="<?php echo base_url() . $item->img; ?>" alt="">
                                     <h5><?php echo $item->name; ?></h5>
+                                    <p><?php echo $this->utilities->limit_text($item->summary, 26); ?></p>
                                 </a>
                                 <div class="content">
                                     <span><?php echo date_format(new DateTime($item->created_date), "d.m.Y"); ?></span>

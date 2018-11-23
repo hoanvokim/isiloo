@@ -59,6 +59,7 @@ $route['searchForm'] = 'webapp/center/search';
 $route['dialForm'] = 'webapp/center/dial';
 $route['registerForm'] = 'webapp/center/register';
 $route['news/(:any)'] = 'webapp/news/all/$1';
+$route['most_view'] = 'webapp/news/most_view';
 $route['news/news_content/(:any)'] = 'webapp/news/content/$1';
 $route['programs/(:any)'] = 'webapp/program/all/$1';
 $route['album/(:any)'] = 'webapp/program/album/$1';

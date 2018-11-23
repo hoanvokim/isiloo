@@ -91,7 +91,10 @@ class News_model extends MY_Model
         for ($i = 0; $i < $cnt - 1; $i++) {
             $sql = $sql . $catId[$i] . ",";
         }
-        $sql = $sql . $catId[$cnt - 1] . ") order by view_count desc limit " . $limit;
+        $sql = $sql . $catId[$cnt - 1] . ") order by view_count desc ";
+        if ($limit != null) {
+            $sql = $sql . ' limit ' . $limit;
+        }
         return $this->db->query($sql)->result();
     }
 

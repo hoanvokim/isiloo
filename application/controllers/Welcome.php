@@ -17,6 +17,7 @@ class Welcome extends CI_Controller
         $this->load->model('Student_model');
         $this->load->model('Gallery_model');
         $this->load->model('Data_model');
+
     }
 
     /**
@@ -40,11 +41,11 @@ class Welcome extends CI_Controller
         $data['latest_news'] = $this->News_model->findFirstByCategoryId(array(DUHOCHANQUOC, DUHOCNGHEHANQUOC, TRUONGDAIHOC, HOCBONG, KINHNGHIEMDUHOC, DAOTAOHANNGU, LUYENTHIXKLD, TINTUC));
         $data['latest_news_cat'] = $this->Category_model->findById($data['latest_news']->category_id);
         $data['most_view_news'] = $this->News_model->findMostViewByCategoryId(array(DUHOCHANQUOC, DUHOCNGHEHANQUOC, TRUONGDAIHOC, HOCBONG, KINHNGHIEMDUHOC, DAOTAOHANNGU, LUYENTHIXKLD, TINTUC), 3);
-        $data['programs'] = $this->News_model->findByCategoryIds($this->Category_model->findByParentId(DAOTAOHANNGU));
+        $data['programs'] = $this->Category_model->findAllByParentId(DAOTAOHANNGU);
         $data['universities'] = $this->University_model->findAllWithNewsInformation();
         $data['students'] = $this->Student_model->findAll();
         $data['studentsWithReview'] = $this->Student_model->findStudentHasReview();
-        $data['self_lessons'] = $this->News_model->findByCategoryIds($this->Category_model->findByParentId(TUHOCTIENGHAN));
+        $data['self_lessons'] = $this->Category_model->findAllByParentId(TUHOCTIENGHAN);
         $data['galleries'] = $this->Gallery_model->findAll();
         $data['youtube_link'] = $this->Data_model->findByKeyName($this->youtube_link)->value;
         $data['youtube_background'] = $this->Data_model->findByKeyName($this->youtube_background)->value;

@@ -33,6 +33,15 @@ class News extends CI_Controller
         $this->load->view('news', $data);
     }
 
+    public function most_view()
+    {
+        $data['active_page'] = 'news';
+        $data['category'] = '';
+        $data['mid_category'] = '';
+        $data['news'] = $this->News_model->findMostViewByCategoryId(array(DUHOCHANQUOC, DUHOCNGHEHANQUOC, TRUONGDAIHOC, HOCBONG, KINHNGHIEMDUHOC, DAOTAOHANNGU, LUYENTHIXKLD, TINTUC), null);
+        $this->load->view('most_view', $data);
+    }
+
     public function content($slug)
     {
         $data['active_page'] = 'news_content';

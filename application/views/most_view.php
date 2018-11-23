@@ -15,10 +15,16 @@
                     <a href="<?php echo base_url() . 'programs/' . $mid_category->slug; ?>">
                         <h5><?php echo $mid_category->name; ?> /&nbsp;</h5></a>
                 <?php } ?>
-                <h5 class="current"><?php echo $category->name; ?></h5>
+                <h5 class="current"><?php if ($category != null) {
+                        echo $category->name;
+                    } else {
+                        echo 'Các bài được xem nhiều nhất';
+                    } ?></h5>
             </div>
             <div class="row wow zoomIn" data-wow-delay="0.2s">
-                <h1><?php echo $category->name; ?></h1>
+                <h1><?php if ($category != null) {
+                        echo $category->name;
+                    } ?></h1>
             </div>
 
             <?php $displayRow = 0; ?>
@@ -28,7 +34,7 @@
                 <?php } ?>
                 <div class="col-md-4 news-thumbnail">
                     <div class="news-border wow fadeInBig" data-wow-delay="0.2s">
-                        <a href="<?php echo base_url() . 'news/news_content/' . $item->slug; ?>">
+                        <a href="<?php echo base_url() . 'news/news_content/' . $item->news_slug; ?>">
                             <img src="<?php echo base_url() . $item->img_square; ?>" alt="">
                             <h5><?php echo $this->utilities->limit_text($item->title, 10); ?></h5>
                         </a>

@@ -72,10 +72,10 @@
                                 href="<?php echo base_url() . 'news/' . $latest_news_cat->id; ?>"><?php echo $latest_news_cat->name; ?> </a>
 
                         <a href="<?php echo base_url() . 'news/news_content/' . $latest_news->slug; ?>">
-                            <h3><?php echo $latest_news->title; ?></h3>
+                            <h3><?php echo $this->utilities->limit_text($latest_news->title, 26); ?></h3>
                         </a>
                         <span>
-                            <?php echo $latest_news->summary; ?>
+                            <?php echo $this->utilities->limit_text($latest_news->summary, 26); ?>
                         </span>
                     </div>
                 </div>
@@ -94,13 +94,17 @@
                             </div>
                             <div class="no-padding col-6 popular_news_area-text-content">
                                 <a href="<?php echo base_url() . 'news/news_content/' . $news->news_slug; ?>">
-                                    <h4 class="testetset"><?php echo $news->title; ?></h4>
+                                    <h4 class="testetset"><?php echo $this->utilities->limit_text($news->title, 26); ?></h4>
                                 </a>
                                 <a href="<?php echo base_url(); ?>">Trang chủ /</a>
                                 <a href="<?php echo base_url() . 'news/' . $news->cat_slug; ?>"><?php echo $news->cat_name; ?></a>
                             </div>
                         </div>
                     <?php } ?>
+                    <a class="button-view wow flipInY" data-wow-delay="1s"
+                       href="<?php echo base_url() . 'most_view'; ?>">
+                        Xem thêm →
+                    </a>
                 </div>
             </div>
         </div>
@@ -179,11 +183,11 @@
                     <?php foreach ($programs as $news) { ?>
                         <div class="single-shot show-shadow">
                             <a href="<?php echo base_url() . 'news/news_content/' . $news->slug; ?>">
-                                <img src="<?php echo base_url() . $news->img_square; ?>" alt="">
-                                <h5><?php echo $news->title; ?></h5>
+                                <img src="<?php echo base_url() . $news->img; ?>" alt="">
+                                <h5><?php echo $news->name; ?></h5>
                             </a>
                             <div class="content">
-                                <span><?php echo $news->summary; ?> </span>
+                                <span><?php echo $this->utilities->limit_text($news->summary, 26); ?></span>
                                 <br/>
                                 <br/>
                                 <a href="<?php echo base_url() . 'news/news_content/' . $news->slug; ?>"> <span>Xem chi tiết >>></span></a>
@@ -346,6 +350,41 @@
     </section>
     <!-- ***** Thong tin du hoc Area End ***** -->
 
+
+    <!-- ***** Tu hoc tieng han Area Start ***** -->
+    <section class="self_learning_area bg-white section_padding_20_30 clearfix wow bounceInUp" data-wow-delay="0.6s"
+             id="tuhoc">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 text-center">
+                    <!-- Heading Text  -->
+                    <div class="section-heading">
+                        <h2>Tự học Tiếng Hàn</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-12">
+                    <!-- App Screenshots Slides  -->
+                    <div class="self_learning_slides owl-carousel">
+                        <?php foreach ($self_lessons as $item) { ?>
+                            <div class="single-shot show-shadow">
+                                <a href="<?php echo base_url() . 'news/' . $item->slug; ?>">
+                                    <img src="<?php echo base_url() . $item->img; ?>" alt="">
+                                    <h5><?php echo $item->name; ?></h5>
+                                </a>
+                            </div>
+                        <?php } ?>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ***** Tu hoc tieng han Area End *****====== -->
+
+
     <!-- ***** hoc vien Feedback Area Start ***** -->
     <section class="clients-feedback-area bg-white section_padding_30_20 clearfix" id="sinhvien">
         <div class="container">
@@ -396,39 +435,6 @@
         </div>
     </section>
     <!-- ***** hoc vien Feedback Area End ***** -->
-
-    <!-- ***** Tu hoc tieng han Area Start ***** -->
-    <section class="self_learning_area bg-white section_padding_70_50 clearfix wow bounceInUp" data-wow-delay="0.6s"
-             id="tuhoc">
-        <div class="container">
-            <div class="row">
-                <div class="col-12 text-center">
-                    <!-- Heading Text  -->
-                    <div class="section-heading">
-                        <h2>Tự học Tiếng Hàn</h2>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-12">
-                    <!-- App Screenshots Slides  -->
-                    <div class="self_learning_slides owl-carousel">
-                        <?php foreach ($self_lessons as $item) { ?>
-                            <div class="single-shot show-shadow">
-                                <a href="<?php echo base_url() . 'news/news_content/' . $item->slug; ?>">
-                                    <img src="<?php echo base_url() . $item->img_square; ?>" alt="">
-                                    <h5><?php echo $item->title; ?></h5>
-                                </a>
-                            </div>
-                        <?php } ?>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- ***** Tu hoc tieng han Area End *****====== -->
 
 
     <!-- ***** ISSILOO Start ***** -->
