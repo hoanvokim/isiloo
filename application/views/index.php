@@ -66,7 +66,7 @@
                     </div>
                     <div class="popular_news_area-content">
                         <a href="<?php echo base_url() . 'news/news_content/' . $latest_news->slug; ?>">
-                            <img src="<?php echo $latest_news->img_square; ?>"/>
+                            <img src="<?php echo $latest_news->img_square; ?>" style="width: 100%;"/>
                         </a>
                         <a href="<?php echo base_url(); ?>">Trang chủ / </a><a
                                 href="<?php echo base_url() . 'news/' . $latest_news_cat->id; ?>"><?php echo $latest_news_cat->name; ?> </a>
@@ -75,7 +75,7 @@
                             <h3><?php echo $this->utilities->limit_text($latest_news->title, 26); ?></h3>
                         </a>
                         <span>
-                            <?php echo $this->utilities->limit_text($latest_news->summary, 26); ?>
+                            <?php echo $this->utilities->limit_text($latest_news->summary, 90); ?>
                         </span>
                     </div>
                 </div>
@@ -172,8 +172,9 @@
                 <div class="col-12 text-center">
                     <!-- Heading Text  -->
                     <div class="our-Team-area-heading wow zoomInDown" data-wow-delay="0.4s">
-                        <h1>Chương trình tại <img src="<?php echo base_url(); ?>webresources/img/issi/issi.png"></a>
-                        </h1>
+                        <a href="<?php echo base_url() . 'programs/dao-tao-han-ngu'; ?>">
+                            <h1>Chương trình tại <img src="<?php echo base_url(); ?>webresources/img/issi/issi.png">  </h1>
+                        </a>
                     </div>
                 </div>
             </div>

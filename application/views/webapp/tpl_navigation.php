@@ -21,7 +21,7 @@
                         <!-- Menu Area -->
                         <div class="collapse navbar-collapse" id="ca-navbar">
                             <ul class="navbar-nav ml-auto" id="nav">
-                                <li class="nav-item active"><a class="nav-link" href="<?php echo base_url(); ?>">Trang chủ</a></li>
+                                <li class="nav-item"><a class="nav-link" href="<?php echo base_url(); ?>">Trang chủ</a></li>
                                 <li class="nav-item"><a class="nav-link" href="<?php echo base_url() . 'programs/dao-tao-han-ngu'; ?>">Chương trình</a></li>
                                 <li class="nav-item"><a class="nav-link" href="<?php echo base_url() . 'news/truong-dai-hoc'; ?>">Trường đại học</a>
                                 </li>

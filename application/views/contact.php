@@ -11,7 +11,7 @@
         <div class="container">
             <div class="row wow zoomIn breadcrumb-area" data-wow-delay="0.2s">
                 <a href="<?php echo base_url(); ?>"><h5>Trang chủ / </h5></a>
-                <h5 class="current">Liên Hệ</h5>
+                <h5 class="current"> Liên Hệ</h5>
             </div>
             <div class="row">
                 <div class="col-12 text-left">

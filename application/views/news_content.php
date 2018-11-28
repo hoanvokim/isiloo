@@ -54,7 +54,7 @@
                                             </a>
                                         </div>
                                         <div class="col-12" style="padding-top: 10px;">
-                                            <a href="<?php echo base_url() . 'news/news_content/' . $item->news_slug; ?>"><?php echo $item->title; ?></a>
+                                            <a href="<?php echo base_url() . 'news/news_content/' . $item->news_slug; ?>"><?php echo $this->utilities->limit_text($item->title, 13); ?></a>
                                         </div>
                                     </div>
                                 </div>
@@ -83,7 +83,7 @@
                                             <img src="<?php echo base_url() . $item->img_square; ?>" alt="">
                                         </div>
                                         <div class="col-md-6 col-12 sub-category-label">
-                                            <span><?php echo $this->utilities->limit_text($item->title, 12); ?></span>
+                                            <span><?php echo $this->utilities->limit_text($item->title, 10); ?></span>
                                         </div>
                                     </div>
                                 <?php } ?>

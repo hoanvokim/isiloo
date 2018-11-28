@@ -1287,7 +1287,7 @@ table {
     padding-bottom: 60px;
 }
 
-.our-Team-area-heading > h1 {
+.our-Team-area-heading > a > h1 {
     color: #2e4a93;
     font-size: 50px;
     font-family: "Montserrat", sans-serif;
@@ -2310,6 +2310,8 @@ div.show-shadow:hover img {
 
 .all-news-area .breadcrumb-area h5 {
     padding: 0px;
+    font-family: 'Cabin', sans-serif;
+    font-weight: 700 !important;
 }
 
 .all-news-area {
@@ -2344,7 +2346,7 @@ div.show-shadow:hover img {
 
 .all-news-area h5 {
     padding: 10px 0 0px 10px;
-    font-size: 20px;
+    font-size: 18px;
     font-weight: bold;
     font-family: "Montserrat", sans-serif;
     color: #1b4191;
@@ -2584,6 +2586,11 @@ div.show-shadow:hover img {
     text-align: left;
 }
 
+.popular_news_area-header h1 {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 600;
+}
+
 .popular_news_area-header h3 {
     padding-top: 20px;
     font-weight: 600;
@@ -2623,7 +2630,7 @@ div.show-shadow:hover img {
 }
 
 .popular_news_area-content h3 {
-    padding: 15px 0;
+    padding: 5px 0;
     font-weight: 800;
     font-family: "Montserrat", sans-serif;
 }
@@ -2749,6 +2756,7 @@ div.show-shadow:hover img {
 .breadcrumb-area h5 {
     color: #2e4a93 !important;
     font-weight: normal !important;
+    font-weight: 700;
 }
 
 .contact-area .breadcrumb-area {
@@ -2772,7 +2780,7 @@ div.show-shadow:hover img {
     font-size: 34px;
     text-transform: uppercase;
     font-family: "Montserrat", sans-serif;
-    font-weight: bolder !important;
+    font-weight: 900 !important;
     text-align: left !important;
     color: #2e4a93 !important;
 }
