@@ -45,4 +45,13 @@ class Data_model extends MY_Model
         $this->db->where('keyname', $keyname);
         return $this->db->get($this->table_name)->row();
     }
+
+    public function updateIssilooInfo($value)
+    {
+        $data = array(
+            'value' => $value
+        );
+        $this->db->where('keyname', 'issiloo-intro');
+        $this->db->update($this->table_name, $data);
+    }
 }

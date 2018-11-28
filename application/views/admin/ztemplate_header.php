@@ -127,6 +127,9 @@
 
                 <h3 class="menu-title">Users</h3><!-- /.menu-title -->
                 <li>
+                    <a href="<?php echo base_url() . 'admin/central/issiloo'; ?>"> <i class="menu-icon fa fa-sign-in"></i>Issiloo Giới thiệu</a>
+                </li>
+                <li>
                     <a href="<?php echo base_url() . 'logout'; ?>"> <i class="menu-icon fa fa-sign-in"></i>Đăng ký</a>
                 </li>
                 <li>

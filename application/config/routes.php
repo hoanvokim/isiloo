@@ -125,6 +125,7 @@ $route['admin/central/subject_delete/:num'] = 'admin/central/subject_delete';
 $route['admin-datainfo-create-form'] = 'admin/central/updateDataInfo';
 $route['admin-gallery-create-form'] = 'admin/central/gallery_create';
 $route['admin/central/gallery_delete/:num'] = 'admin/central/gallery_delete';
+$route['admin-issiloo-update-form'] = 'admin/central/issiloo_update';
 
 $route['admin/contact'] = 'admin/contact';
 $route['admin/contact/update/:num'] = 'admin/contact/update';

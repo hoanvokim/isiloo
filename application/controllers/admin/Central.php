@@ -51,6 +51,12 @@ class Central extends MY_Controller
                 $data['items'] = $this->Data_model->findAll();
                 $this->load->view('admin/student', $data);
                 break;
+
+            case "issiloo":
+                $data['active_page'] = 'student';
+                $data['items'] = $this->Data_model->findByKeyName('issiloo-intro');
+                $this->load->view('admin/issiloo', $data);
+                break;
             default:
                 $this->load->view('404');
         }
@@ -79,6 +85,14 @@ class Central extends MY_Controller
         $data['items'] = $this->Subject_model->findAll();
         $data['showmessages'] = 'Xóa chủ để thành công!';
         $this->load->view('admin/subject', $data);
+    }
+
+    public function issiloo_update()
+    {
+        $this->Data_model->updateIssilooInfo($this->input->post('contenteditor'));
+        $data['items'] = $this->Data_model->findByKeyName('issiloo-intro');
+        $data['showmessages'] = 'Cập nhật thành công!';
+        $this->load->view('admin/issiloo', $data);
     }
 
     public function subject_create()

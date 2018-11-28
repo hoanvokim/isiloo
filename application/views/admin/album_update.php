@@ -133,6 +133,7 @@
                             </a>
                         <?php } ?>
                         <br/>
+                        <br/>
                         <span>Thêm hình ảnh</span>
                         <input type='file' name='files[]' multiple id="text-img-content" size='20'/>
                         <br/>
